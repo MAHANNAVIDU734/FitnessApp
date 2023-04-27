@@ -17,6 +17,7 @@
 		3E1E81DD29FAB9640071FA55 /* FitnessAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81DC29FAB9640071FA55 /* FitnessAppTests.swift */; };
 		3E1E81E729FAB9650071FA55 /* FitnessAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */; };
 		3E1E81E929FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */; };
+		AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC8341D329FAC0DE006C2FC5 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3E1E81E229FAB9640071FA55 /* FitnessAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITests.swift; sourceTree = "<group>"; };
 		3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC8341D329FAC0DE006C2FC5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		3E1E81B629FAB95D0071FA55 = {
 			isa = PBXGroup;
 			children = (
+				AC8341D229FAC07F006C2FC5 /* Git */,
 				3E1E81C129FAB95E0071FA55 /* FitnessApp */,
 				3E1E81DB29FAB9640071FA55 /* FitnessAppTests */,
 				3E1E81E529FAB9640071FA55 /* FitnessAppUITests */,
@@ -128,6 +131,14 @@
 				3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */,
 			);
 			path = FitnessAppUITests;
+			sourceTree = "<group>";
+		};
+		AC8341D229FAC07F006C2FC5 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				AC8341D329FAC0DE006C2FC5 /* .gitignore */,
+			);
+			path = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */,
 				3E1E81D229FAB9630071FA55 /* LaunchScreen.storyboard in Resources */,
 				3E1E81CF29FAB9630071FA55 /* Assets.xcassets in Resources */,
 				3E1E81CA29FAB95E0071FA55 /* Main.storyboard in Resources */,
@@ -371,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -426,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
