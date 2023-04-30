@@ -20,4 +20,12 @@ class CommonHelpers {
         let letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return String((0...lenth).map{_ in letter.randomElement()!})
     }
+    
+    static func calculateBMIValue(height:Double?,weight:Double?) -> Double?{
+        if let _height = height ,let  _weight = weight {
+            return (  _weight / (_height * _height))
+        }else{
+            return   0.0
+        }
+    }
 }

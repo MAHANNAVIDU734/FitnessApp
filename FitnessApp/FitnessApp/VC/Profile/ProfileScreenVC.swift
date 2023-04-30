@@ -62,7 +62,7 @@ class ProfileScreenVC: UIViewController {
             if let _updatedFirestoreUserObject = updatedFirestoreUserObject {
                 FirestoreUserManager.shared.storeSignedUpUserDetailsOnFirestoreDb(firebaseUser: _currentLoggedInFirebaseAuthUser, firestoreUser: _updatedFirestoreUserObject) { status, message, data in
                     if(status){
-                        AlertManager.shared.singleActionMessage(title: "Alert", message: "Sign up Successful!", actionButtonTitle: "Ok", vc: self) { action in
+                        AlertManager.shared.singleActionMessage(title: "Alert", message: "Profile Update Successful!", actionButtonTitle: "Ok", vc: self) { action in
                             //navigate back
                         }
                     }else{
