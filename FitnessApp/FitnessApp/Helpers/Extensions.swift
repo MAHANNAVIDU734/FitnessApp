@@ -34,3 +34,40 @@ public extension String {
     }
 }
 
+extension Decodable {
+    /// Initialize from JSON Dictionary. Return nil on failure
+    init?(dictionary value: [String:Any?]){
+        
+        guard JSONSerialization.isValidJSONObject(value) else { return nil }
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: value, options: []) else { return nil }
+        
+        guard let newValue = try? JSONDecoder().decode(Self.self, from: jsonData) else { return nil }
+        self = newValue
+    }
+}
+
+extension Encodable {
+    func toJSON() -> String? {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        do {
+            let jsonData = try encoder.encode(self)
+            
+            return String(data: jsonData, encoding: .utf8)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    func getDictionary() -> [String: Any]? {
+        let encoder = JSONEncoder()
+        
+        guard let data = try? encoder.encode(self) else { return nil }
+        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any]
+        }
+    }
+}
+
+
