@@ -22,6 +22,7 @@
 		823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */; };
 		82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0529FFE10D00EDFF5C /* CardView.swift */; };
 		82A97C0829FFE51800EDFF5C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0729FFE51800EDFF5C /* CustomButton.swift */; };
+		82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */; };
 		A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */; };
@@ -83,6 +84,7 @@
 		823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
 		82A97C0529FFE10D00EDFF5C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		82A97C0729FFE51800EDFF5C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreExcercise.swift; sourceTree = "<group>"; };
@@ -164,7 +166,6 @@
 				3E1E81C229FAB95E0071FA55 /* AppDelegate.swift */,
 				3E1E81C429FAB95E0071FA55 /* SceneDelegate.swift */,
 				3E1E81C629FAB95E0071FA55 /* ViewController.swift */,
-				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
 				3E1E81CE29FAB9630071FA55 /* Assets.xcassets */,
 				3E1E81D029FAB9630071FA55 /* LaunchScreen.storyboard */,
 				3E1E81D329FAB9630071FA55 /* Info.plist */,
@@ -229,6 +230,7 @@
 			children = (
 				A6EC5DB829FD6E2D005724D3 /* Profile */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
+				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -240,6 +242,7 @@
 				A6EC5DA729FCF92D005724D3 /* SignUp */,
 				A6A8A73629FC1CD300DE96CF /* LauchScreen */,
 				823A9A9529FEEEBC00983882 /* Auth.storyboard */,
+				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -448,6 +451,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
+				A6416DCB29FEE09900E2D292 /* Excercise.swift in Sources */,
+				82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */,
 				A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */,
 				3E1E81C729FAB95E0071FA55 /* ViewController.swift in Sources */,
 				A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */,
