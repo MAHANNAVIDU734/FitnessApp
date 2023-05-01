@@ -5,6 +5,11 @@ import RappleProgressHUD
 
 class SignUpScreenVC: UIViewController {
     
+    @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var phoneNumberTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -128,5 +133,13 @@ class SignUpScreenVC: UIViewController {
         var phoneNumber:String? = ""
         
         return FirestoreUser(id: firebaseAuthUserId, fName: fName!, phone: phoneNumber!, avatarUrl: DefaultPlaceHolderLinks.user_avatar.rawValue)
+    }
+    
+    
+    @IBAction func signupAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func navigateToSigInViewAction(_ sender: Any) {
     }
 }
