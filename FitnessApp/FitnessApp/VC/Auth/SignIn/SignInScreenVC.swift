@@ -9,6 +9,9 @@ class SignInScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailTxt.delegate = self
+        self.passwordTxt.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,5 +112,12 @@ class SignInScreenVC: UIViewController {
     @IBAction func navigateTosignupViewAction(_ sender: Any) {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Auth, identifier: "SignUpScreenVC")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SignInScreenVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

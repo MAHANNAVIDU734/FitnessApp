@@ -12,6 +12,10 @@ class SignUpScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nameTxt.delegate = self
+        self.phoneNumberTxt.delegate = self
+        self.emailTxt.delegate = self
+        self.passwordTxt.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,5 +154,12 @@ class SignUpScreenVC: UIViewController {
     @IBAction func navigateToSigInViewAction(_ sender: Any) {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Auth, identifier: "SignInScreenVC")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SignUpScreenVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
