@@ -45,6 +45,9 @@ class FirestoreUserManager {
                 if let _userDataDictoanary = document?.data() {
                     let firestoreUser =  FirestoreUser(dictionary: _userDataDictoanary)
                     completionWithPayload?(true,nil,firestoreUser)
+                }else{
+                    let errorMessage = "User Data is Missing On Platform..Please Contact Admin"
+                    completionWithPayload?(false,errorMessage,nil)
                 }
             }
         }
