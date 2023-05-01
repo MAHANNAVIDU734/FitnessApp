@@ -46,8 +46,8 @@ class SignUpScreenVC: UIViewController {
     
     private func validateForm() -> Bool {
         let fName:String? = nameTxt.text?.removingAllWhitespaces()
-        let email :String? = phoneNumberTxt.text?.removingAllWhitespaces()
-        let phoneNumber:String? = emailTxt.text?.removingAllWhitespaces()
+        let email :String? = emailTxt.text?.removingAllWhitespaces()
+        let phoneNumber :String? = phoneNumberTxt.text?.removingAllWhitespaces()
         let password:String? = passwordTxt.text?.removingAllWhitespaces()
         let confirmPassword:String? = ""
         
@@ -113,7 +113,7 @@ class SignUpScreenVC: UIViewController {
     }
     
     private func createNewUserOnFirebaseAuth(){
-        let email :String? = phoneNumberTxt.text?.removingAllWhitespaces()
+        let email :String? = emailTxt.text?.removingAllWhitespaces()
         let password:String? = passwordTxt.text?.removingAllWhitespaces()
         
         RappleActivityIndicatorView.startAnimating()
@@ -141,7 +141,7 @@ class SignUpScreenVC: UIViewController {
     
     private func mapFormInputToFirestoreUserObject(firebaseAuthUserId:String)->FirestoreUser{
         let fName:String? = nameTxt.text?.removingAllWhitespaces()
-        let phoneNumber:String? = emailTxt.text?.removingAllWhitespaces()
+        let phoneNumber:String? = phoneNumberTxt.text?.removingAllWhitespaces()
         
         return FirestoreUser(id: firebaseAuthUserId, fName: fName!, phone: phoneNumber!, avatarUrl: DefaultPlaceHolderLinks.user_avatar.rawValue)
     }
