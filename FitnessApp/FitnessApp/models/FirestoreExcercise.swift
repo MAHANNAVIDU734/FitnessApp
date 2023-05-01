@@ -1,14 +1,8 @@
-//
-//  Excercise.swift
-//  FitnessApp
-//
-//  Created by AdminProject on 2023-04-30.
-//
 
 import Foundation
 
 
-struct Exercise: Codable
+struct FirestoreExcercise: Codable
 {
     var excerciseId:String
     var exerciseGIFs: [String]
@@ -16,6 +10,5 @@ struct Exercise: Codable
     var exerciseDescription: String
     var targetMuscles: [String]
     var exerciseEquipments: [String]
-    var bmiTargetRangeStartsFrom : Double
-    var bmiTargetRangeEndsAt : Double
+    var bmiTargetRange : [Double]
 }
