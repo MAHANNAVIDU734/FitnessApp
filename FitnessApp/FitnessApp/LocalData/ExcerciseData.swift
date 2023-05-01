@@ -9,7 +9,7 @@ class ExcerciseData{
     }()
     
     
-    func getExcerviseData
+//    func getExcerviseData
     
     
 }
