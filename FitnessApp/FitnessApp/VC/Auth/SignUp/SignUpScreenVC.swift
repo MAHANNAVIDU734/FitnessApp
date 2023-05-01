@@ -50,7 +50,7 @@ class SignUpScreenVC: UIViewController {
         let email :String? = emailTxt.text?.removingAllWhitespaces()
         let phoneNumber :String? = phoneNumberTxt.text?.removingAllWhitespaces()
         let password:String? = passwordTxt.text?.removingAllWhitespaces()
-        let confirmPassword:String? = ""
+        let confirmPassword:String? = confirmPasswordTxt.text?.removingAllWhitespaces()
         
         
         guard let _fName = fName else {
