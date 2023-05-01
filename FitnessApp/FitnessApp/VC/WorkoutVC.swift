@@ -9,15 +9,18 @@ import UIKit
 
 class WorkoutVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor(named: "theme")
     }
 }
 
 extension WorkoutVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutTVCell" , for: indexPath)
@@ -26,14 +29,8 @@ extension WorkoutVC: UITableViewDelegate , UITableViewDataSource {
         }
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Auth, identifier: "WorkoutTVCell")
-        if let _vc = vc as? WorkoutTVCell {
-        }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 140
     }
 }
 
