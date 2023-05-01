@@ -20,6 +20,8 @@
 		823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9329FEE00F00983882 /* GoogleService-Info.plist */; };
 		823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9529FEEEBC00983882 /* Auth.storyboard */; };
 		823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */; };
+		82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0529FFE10D00EDFF5C /* CardView.swift */; };
+		82A97C0829FFE51800EDFF5C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0729FFE51800EDFF5C /* CustomButton.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */; };
 		A6416DCB29FEE09900E2D292 /* Excercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* Excercise.swift */; };
@@ -78,6 +80,8 @@
 		823A9A9329FEE00F00983882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		823A9A9529FEEEBC00983882 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
+		82A97C0529FFE10D00EDFF5C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		82A97C0729FFE51800EDFF5C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* Excercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excercise.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				A6EC5DAA29FCFC6D005724D3 /* Extensions.swift */,
 				A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */,
 				823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */,
+				82A97C0529FFE10D00EDFF5C /* CardView.swift */,
+				82A97C0729FFE51800EDFF5C /* CustomButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -449,9 +455,11 @@
 				A6EC5DB129FD3E1A005724D3 /* FirestoreUser.swift in Sources */,
 				A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */,
 				A6A8A73129FC154400DE96CF /* Enum.swift in Sources */,
+				82A97C0829FFE51800EDFF5C /* CustomButton.swift in Sources */,
 				A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */,
 				823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */,
 				A6A8A73829FC1D1A00DE96CF /* LaunchScreenVC.swift in Sources */,
+				82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */,
 				A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */,
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,

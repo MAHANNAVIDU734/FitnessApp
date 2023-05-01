@@ -11,6 +11,16 @@ class SignInScreenVC: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func handleSignInActionClick(){
         if(validateForm()){
             authenticateWithFirebaseAuth()
@@ -97,5 +107,7 @@ class SignInScreenVC: UIViewController {
     }
     
     @IBAction func navigateTosignupViewAction(_ sender: Any) {
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Auth, identifier: "SignUpScreenVC")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
