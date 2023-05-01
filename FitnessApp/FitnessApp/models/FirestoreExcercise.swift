@@ -11,4 +11,5 @@ struct FirestoreExcercise: Codable
     var targetMuscles: String
     var exerciseEquipments: [String]
     var bmiTargetRange : [Double]
+    var duration : Int // in minutes
 }
