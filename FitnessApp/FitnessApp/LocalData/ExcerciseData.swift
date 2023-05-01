@@ -8,8 +8,6 @@ class ExcerciseData{
         return _shared
     }()
     
-    
-//    func getExcerviseData
-    
-    
+
+//    func getExcerviseData   
 }

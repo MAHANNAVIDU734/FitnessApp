@@ -4,6 +4,9 @@ import RappleProgressHUD
 
 class SignInScreenVC: UIViewController {
     
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -89,4 +92,10 @@ class SignInScreenVC: UIViewController {
         }
     }
     
+    @IBAction func signInAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func navigateTosignupViewAction(_ sender: Any) {
+    }
 }
