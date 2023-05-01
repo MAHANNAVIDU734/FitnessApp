@@ -8,6 +8,9 @@ class SignInScreenVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     
     override func viewDidLoad() {
+//        FirestoreExcerciseManager.shared.storeSignedUpUserDetailsOnFirestoreDb { status, message, data in
+//
+//        }
         super.viewDidLoad()
         
         self.emailTxt.delegate = self
@@ -32,8 +35,8 @@ class SignInScreenVC: UIViewController {
     
     private func validateForm() -> Bool {
         
-        var email :String? = ""
-        var password:String? = ""
+        let email :String? = emailTxt.text?.removingAllWhitespaces()
+        let password:String? = passwordTxt.text?.removingAllWhitespaces()
         
         
         guard let _email = email else {
@@ -66,14 +69,14 @@ class SignInScreenVC: UIViewController {
     }
     
     private  func authenticateWithFirebaseAuth(){
-        var email :String? = ""
-        var password:String? = ""
+        let email :String? = emailTxt.text?.removingAllWhitespaces()
+        let password:String? = passwordTxt.text?.removingAllWhitespaces()
         
         RappleActivityIndicatorView.startAnimating()
         Auth.auth().fetchSignInMethods(forEmail: email!){(methods, signInMethodsError) in
             guard let _signInMethods = methods,signInMethodsError == nil else {
                 RappleActivityIndicatorView.stopAnimation()
-                self.showErrorAlert(messageString: signInMethodsError!.localizedDescription)
+                self.showErrorAlert(messageString: "No User Found with this Email.Please Sign Up!")
                 return
             }
             if ( _signInMethods.contains("password")){
@@ -106,7 +109,7 @@ class SignInScreenVC: UIViewController {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        
+        handleSignInActionClick()
     }
     
     @IBAction func navigateTosignupViewAction(_ sender: Any) {
