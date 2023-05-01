@@ -18,6 +18,8 @@
 		3E1E81E729FAB9650071FA55 /* FitnessAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */; };
 		3E1E81E929FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
+		A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */; };
+		A6416DCB29FEE09900E2D292 /* Excercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* Excercise.swift */; };
 		A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72C29FC141300DE96CF /* AlertManager.swift */; };
 		A6A8A72F29FC145200DE96CF /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72E29FC145200DE96CF /* Handlers.swift */; };
 		A6A8A73129FC154400DE96CF /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A73029FC154400DE96CF /* Enum.swift */; };
@@ -72,6 +74,8 @@
 		3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITests.swift; sourceTree = "<group>"; };
 		3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
+		A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
+		A6416DCA29FEE09900E2D292 /* Excercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excercise.swift; sourceTree = "<group>"; };
 		A6A8A72C29FC141300DE96CF /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A6A8A72E29FC145200DE96CF /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		A6A8A73029FC154400DE96CF /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 		3E1E81C129FAB95E0071FA55 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				A6416DC929FEE08800E2D292 /* models */,
+				A6416DC629FEDF6700E2D292 /* LocalData */,
 				A6EC5DAF29FD3DFE005724D3 /* FirestoreDb */,
 				A6A8A73429FC1CBA00DE96CF /* VC */,
 				A6A8A72B29FC139900DE96CF /* Helpers */,
@@ -173,6 +179,22 @@
 				3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */,
 			);
 			path = FitnessAppUITests;
+			sourceTree = "<group>";
+		};
+		A6416DC629FEDF6700E2D292 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		A6416DC929FEE08800E2D292 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A6416DCA29FEE09900E2D292 /* Excercise.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		A6A8A72B29FC139900DE96CF /* Helpers */ = {
@@ -410,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
+				A6416DCB29FEE09900E2D292 /* Excercise.swift in Sources */,
 				3E1E81C729FAB95E0071FA55 /* ViewController.swift in Sources */,
 				A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */,
 				A6EC5DAE29FD3DB7005724D3 /* FirestoreUserManager.swift in Sources */,
@@ -421,6 +444,7 @@
 				A6A8A73129FC154400DE96CF /* Enum.swift in Sources */,
 				A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */,
 				A6A8A73829FC1D1A00DE96CF /* LaunchScreenVC.swift in Sources */,
+				A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */,
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,
 				A6EC5DAB29FCFC6D005724D3 /* Extensions.swift in Sources */,
