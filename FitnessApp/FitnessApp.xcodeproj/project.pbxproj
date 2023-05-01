@@ -18,6 +18,8 @@
 		3E1E81E729FAB9650071FA55 /* FitnessAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */; };
 		3E1E81E929FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */; };
 		823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9329FEE00F00983882 /* GoogleService-Info.plist */; };
+		823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9529FEEEBC00983882 /* Auth.storyboard */; };
+		823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72C29FC141300DE96CF /* AlertManager.swift */; };
 		A6A8A72F29FC145200DE96CF /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72E29FC145200DE96CF /* Handlers.swift */; };
@@ -72,6 +74,8 @@
 		3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITests.swift; sourceTree = "<group>"; };
 		3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		823A9A9329FEE00F00983882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		823A9A9529FEEEBC00983882 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6A8A72C29FC141300DE96CF /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A6A8A72E29FC145200DE96CF /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				A6A8A73229FC1C8B00DE96CF /* Constants.swift */,
 				A6EC5DAA29FCFC6D005724D3 /* Extensions.swift */,
 				A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */,
+				823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				A6EC5DB529FD4C87005724D3 /* SignIn */,
 				A6EC5DA729FCF92D005724D3 /* SignUp */,
 				A6A8A73629FC1CD300DE96CF /* LauchScreen */,
+				823A9A9529FEEEBC00983882 /* Auth.storyboard */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */,
 				AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */,
 				3E1E81D229FAB9630071FA55 /* LaunchScreen.storyboard in Resources */,
 				823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */,
@@ -420,6 +427,7 @@
 				A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */,
 				A6A8A73129FC154400DE96CF /* Enum.swift in Sources */,
 				A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */,
+				823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */,
 				A6A8A73829FC1D1A00DE96CF /* LaunchScreenVC.swift in Sources */,
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,

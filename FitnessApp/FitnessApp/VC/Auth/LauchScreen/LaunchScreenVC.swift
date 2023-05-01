@@ -7,7 +7,13 @@ class LaunchScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        handleUserNavigation(isUserAuthenticated: false)
+    }
+    
+    func handleUserNavigation(isUserAuthenticated:Bool){
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 3)) {
+            ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: isUserAuthenticated)
+        }
     }
     
     //:MARK check user authentication on firebase
