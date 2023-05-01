@@ -129,8 +129,10 @@ class SignUpScreenVC: UIViewController {
             FirestoreUserManager.shared.storeSignedUpUserDetailsOnFirestoreDb(firebaseUser: user, firestoreUser: firestoreUser) { status, message, data in
                 let _errorMsg = message ?? "Something Went Wrong"
                 if(status){
+                    Constants.currentLoggedInFireStoreUser = firestoreUser
+                    RappleActivityIndicatorView.stopAnimation()
                     AlertManager.shared.singleActionMessage(title: "Alert", message: "Sign up Successful!", actionButtonTitle: "Ok", vc: self) { action in
-                        //navigate to the app home
+                        ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: true)
                     }
                 }else{
                     RappleActivityIndicatorView.stopAnimation()
