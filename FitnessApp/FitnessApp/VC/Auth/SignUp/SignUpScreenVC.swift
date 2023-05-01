@@ -45,11 +45,11 @@ class SignUpScreenVC: UIViewController {
     }
     
     private func validateForm() -> Bool {
-        var fName:String? = ""
-        var email :String? = ""
-        var phoneNumber:String? = ""
-        var password:String? = ""
-        var confirmPassword:String? = ""
+        let fName:String? = nameTxt.text?.removingAllWhitespaces()
+        let email :String? = phoneNumberTxt.text?.removingAllWhitespaces()
+        let phoneNumber:String? = emailTxt.text?.removingAllWhitespaces()
+        let password:String? = passwordTxt.text?.removingAllWhitespaces()
+        let confirmPassword:String? = ""
         
         
         guard let _fName = fName else {
@@ -113,8 +113,8 @@ class SignUpScreenVC: UIViewController {
     }
     
     private func createNewUserOnFirebaseAuth(){
-        var email :String? = ""
-        var password:String? = ""
+        let email :String? = phoneNumberTxt.text?.removingAllWhitespaces()
+        let password:String? = passwordTxt.text?.removingAllWhitespaces()
         
         RappleActivityIndicatorView.startAnimating()
         Auth.auth().createUser(withEmail: email!, password: password!) { authResult, error in
@@ -140,15 +140,15 @@ class SignUpScreenVC: UIViewController {
     }
     
     private func mapFormInputToFirestoreUserObject(firebaseAuthUserId:String)->FirestoreUser{
-        var fName:String? = ""
-        var phoneNumber:String? = ""
+        let fName:String? = nameTxt.text?.removingAllWhitespaces()
+        let phoneNumber:String? = emailTxt.text?.removingAllWhitespaces()
         
         return FirestoreUser(id: firebaseAuthUserId, fName: fName!, phone: phoneNumber!, avatarUrl: DefaultPlaceHolderLinks.user_avatar.rawValue)
     }
     
     
     @IBAction func signupAction(_ sender: Any) {
-        
+        handleSignUpActionClick()
     }
     
     @IBAction func navigateToSigInViewAction(_ sender: Any) {
