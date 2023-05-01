@@ -14,9 +14,10 @@ class ApplicationServiceProvider {
 //        }
 //        UserDefaultManager.set(true, forKey: .isNotInitialLaunch)
         
-        var vc = viewController(in: .Auth, identifier: "AuthNVC")
+//        var vc = viewController(in: .Auth, identifier: "AuthNVC")
+        var vc = viewController(in: .Main, identifier: "MainTabBarController")
         if isUserAuthenticated {
-            vc = viewController(in: .Main, identifier: "MainNVC")
+            vc = viewController(in: .Main, identifier: "MainTabBarController")
         }
         AppDelegate.standard.window?.rootViewController = vc
     }
