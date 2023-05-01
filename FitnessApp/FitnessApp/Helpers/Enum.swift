@@ -1,5 +1,10 @@
 import Foundation
 
+enum Storyboard: String {
+    case Auth
+    case Main
+   
+}
 
 enum FirestoreCollections:String{
     case users = "users"
