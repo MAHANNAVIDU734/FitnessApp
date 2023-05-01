@@ -8,6 +8,7 @@ enum Storyboard: String {
 
 enum FirestoreCollections:String{
     case users = "users"
+    case excercise = "excercise"
 }
 
 enum FirebaseStorageFileCategories:String{
