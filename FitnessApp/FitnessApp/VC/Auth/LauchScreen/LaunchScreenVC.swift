@@ -6,8 +6,7 @@ class LaunchScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        handleUserNavigation(isUserAuthenticated: false)
+        checkIsUserAuthenticatedOnFirebase()
     }
     
     func handleUserNavigation(isUserAuthenticated:Bool){
@@ -22,16 +21,33 @@ class LaunchScreenVC: UIViewController {
         if currentUser != nil {
             Auth.auth().currentUser?.reload(completion: { err in
                 if let error = err {
-                    AlertManager.shared.singleActionMessage(title: "Alert", message: error.localizedDescription, actionButtonTitle: "Ok", vc: self)
+                    AlertManager.shared.singleActionMessage(title: "Alert", message:error.localizedDescription , actionButtonTitle: "Ok", vc: self) { action in
+                        self.handleUserNavigation(isUserAuthenticated: false)
+                    }
                 }else{
                     Constants.currentLoggedInFirebaseAuthUser =  Auth.auth().currentUser
-                    //Conitnue to home
+                    self.fetchFirestoreUser(firebaseUser:  Auth.auth().currentUser!)
                 }
             })
         }else{
-            //Conitnue to login
+            handleUserNavigation(isUserAuthenticated: false)
         }
-        
+    }
+    
+    private func fetchFirestoreUser(firebaseUser:User){
+        FirestoreUserManager.shared.getUserDetailsStoredOnFirestoreDb(firebaseUser:firebaseUser) { status, message, data in
+            if (status){
+                var firestoreUser =  data as! FirestoreUser
+                Constants.currentLoggedInFireStoreUser = firestoreUser
+                self.handleUserNavigation(isUserAuthenticated: true)
+            }else{
+                self.showErrorAlert(messageString: message!)
+            }
+        }
+    }
+    
+    private func showErrorAlert(messageString:String){
+        AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
     
     /*
