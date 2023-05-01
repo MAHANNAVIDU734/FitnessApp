@@ -9,6 +9,7 @@ class SignUpScreenVC: UIViewController {
     @IBOutlet weak var phoneNumberTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var confirmPasswordTxt: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

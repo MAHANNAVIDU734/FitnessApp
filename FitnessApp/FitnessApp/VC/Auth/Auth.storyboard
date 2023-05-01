@@ -439,6 +439,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTxt" destination="jjh-yk-DOT" id="AYd-aE-GTc"/>
                         <outlet property="emailTxt" destination="TVS-sb-imu" id="SIz-yw-vg6"/>
                         <outlet property="nameTxt" destination="X9X-d9-VZu" id="rcg-w0-wzh"/>
                         <outlet property="passwordTxt" destination="DKF-j6-Ufz" id="4IT-NQ-PhP"/>
