@@ -233,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
+				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
 				82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */,
 				82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */,
 				A6EC5DB829FD6E2D005724D3 /* Profile */,
@@ -248,7 +249,6 @@
 				A6EC5DA729FCF92D005724D3 /* SignUp */,
 				A6A8A73629FC1CD300DE96CF /* LauchScreen */,
 				823A9A9529FEEEBC00983882 /* Auth.storyboard */,
-				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
