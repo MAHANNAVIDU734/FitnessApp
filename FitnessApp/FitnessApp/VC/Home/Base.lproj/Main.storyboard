@@ -54,10 +54,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJf-O6-fgi">
-                                        <rect key="frame" x="0.0" y="0.0" width="395" height="844"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="395" height="856"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-2y-uk1">
-                                                <rect key="frame" x="16" y="16" width="363" height="788"/>
+                                                <rect key="frame" x="16" y="16" width="363" height="800"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPZ-u0-fjG">
                                                         <rect key="frame" x="0.0" y="0.0" width="363" height="48"/>
@@ -203,26 +203,24 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Submit"/>
+                                                        <connections>
+                                                            <action selector="submitAction:" destination="adh-Sf-RRZ" eventType="touchUpInside" id="k5r-3t-oXM"/>
+                                                        </connections>
                                                     </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="03x-cb-9kV">
-                                                        <rect key="frame" x="0.0" y="756" width="363" height="32"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PM1-Ui-8l0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="32"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rY-QX-dYV">
-                                                                <rect key="frame" x="296" y="0.0" width="67" height="32"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="Sign Out">
-                                                                    <color key="titleColor" name="title"/>
-                                                                </state>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rY-QX-dYV">
+                                                        <rect key="frame" x="0.0" y="756" width="363" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="1Ej-1k-SNv"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Sign Out">
+                                                            <color key="titleColor" name="title"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="signoutAction:" destination="adh-Sf-RRZ" eventType="touchUpInside" id="yMl-7B-bVy"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -257,8 +255,16 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle.fill" catalog="system" id="LSK-kc-tQV"/>
                     <connections>
+                        <outlet property="ageTxt" destination="eeD-UT-c8s" id="8mU-9K-w7z"/>
+                        <outlet property="emailTxt" destination="IqE-zX-qjC" id="API-eD-e9T"/>
+                        <outlet property="fitnessGoalTxt" destination="zfc-fm-FLK" id="41z-OE-HU8"/>
+                        <outlet property="fullNameTxt" destination="9Q6-If-C4O" id="sbA-9I-IdX"/>
+                        <outlet property="heightTxt" destination="hYR-zo-Fht" id="EGh-wA-rGe"/>
                         <outlet property="profileImg" destination="Zrd-UB-Qfi" id="LyO-oE-rjp"/>
+                        <outlet property="scrollView" destination="nGy-Bg-ky5" id="Hc5-2W-6Pt"/>
+                        <outlet property="signoutBtn" destination="9rY-QX-dYV" id="5xN-dF-Fr5"/>
                         <outlet property="uploadBtn" destination="gFy-Ff-1S5" id="Y3o-6l-ZRi"/>
+                        <outlet property="weightTxt" destination="QHx-Ip-50K" id="cPs-HH-sdE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCe-ZO-xHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -422,8 +428,8 @@
                     <connections>
                         <segue destination="tTA-aN-XGq" kind="relationship" relationship="viewControllers" id="hDd-03-1zY"/>
                         <segue destination="HbF-AV-NBg" kind="relationship" relationship="viewControllers" id="tDU-Ut-syk"/>
-                        <segue destination="adh-Sf-RRZ" kind="relationship" relationship="viewControllers" id="I6W-nv-ehL"/>
                         <segue destination="J4g-u5-Ket" kind="relationship" relationship="viewControllers" id="DTr-xo-GaP"/>
+                        <segue destination="adh-Sf-RRZ" kind="relationship" relationship="viewControllers" id="I6W-nv-ehL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4z-D1-imO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
