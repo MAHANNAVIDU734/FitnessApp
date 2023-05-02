@@ -8,9 +8,9 @@ class SignInScreenVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     
     override func viewDidLoad() {
-//        FirestoreExcerciseManager.shared.storeSignedUpUserDetailsOnFirestoreDb { status, message, data in
-//
-//        }
+        //        FirestoreExcerciseManager.shared.storeSignedUpUserDetailsOnFirestoreDb { status, message, data in
+        //
+        //        }
         super.viewDidLoad()
         
         self.emailTxt.delegate = self
@@ -92,7 +92,7 @@ class SignInScreenVC: UIViewController {
                             Constants.currentLoggedInFireStoreUser = firestoreUser
                             RappleActivityIndicatorView.stopAnimation()
                             AlertManager.shared.singleActionMessage(title: "Alert", message: "Sign In Successfully!", actionButtonTitle: "Ok", vc: self) { action in
-                                //navigate to the app home
+                                self.handleUserNavigation(isUserAuthenticated: true)
                             }
                         }else{
                             RappleActivityIndicatorView.stopAnimation()
@@ -105,6 +105,12 @@ class SignInScreenVC: UIViewController {
                 self.showErrorAlert(messageString: "No User Found with this Email.Please Sign Up!")
                 return
             }
+        }
+    }
+    
+    func handleUserNavigation(isUserAuthenticated:Bool){
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 5)) {
+            ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: isUserAuthenticated)
         }
     }
     
