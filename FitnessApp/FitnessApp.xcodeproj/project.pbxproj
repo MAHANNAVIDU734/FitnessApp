@@ -228,9 +228,9 @@
 		A6A8A73429FC1CBA00DE96CF /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				A6ED56AD2A0163870012CD0A /* ExerciseDetail */,
 				A6ED56AB2A0161CB0012CD0A /* Home */,
 				A6ED56A82A0161280012CD0A /* StartedSchedule */,
-				A6EC5DB829FD6E2D005724D3 /* Profile */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
 			);
 			path = VC;
@@ -311,12 +311,44 @@
 		A6ED56AB2A0161CB0012CD0A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A6EC5DB829FD6E2D005724D3 /* Profile */,
+				A6ED56AF2A0163DF0012CD0A /* BMI */,
+				A6ED56AE2A0163C70012CD0A /* Schedules */,
+				A6ED56AC2A0163280012CD0A /* Exercises */,
 				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
 				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A6ED56AC2A0163280012CD0A /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
 				82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */,
 				82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */,
 			);
-			path = Home;
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		A6ED56AD2A0163870012CD0A /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		A6ED56AE2A0163C70012CD0A /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		A6ED56AF2A0163DF0012CD0A /* BMI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BMI;
 			sourceTree = "<group>";
 		};
 		AC8341D229FAC07F006C2FC5 /* Git */ = {
