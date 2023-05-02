@@ -58,7 +58,23 @@
             </objects>
             <point key="canvasLocation" x="2378" y="-596"/>
         </scene>
-        <!--Workouts-->
+        <!--BMI-->
+        <scene sceneID="Rtm-XZ-abY">
+            <objects>
+                <viewController id="J4g-u5-Ket" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FjX-8e-grW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="R0L-50-KWy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="BMI" image="scalemass" catalog="system" id="Eoz-1Q-rYJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3p-8R-V81" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="131"/>
+        </scene>
+        <!--Exercise-->
         <scene sceneID="0NK-Yi-fem">
             <objects>
                 <viewController storyboardIdentifier="WorkoutVC" id="tTA-aN-XGq" customClass="ExerciseVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +194,7 @@
                             <constraint firstItem="iHN-Xq-41d" firstAttribute="leading" secondItem="6TT-Jt-lXN" secondAttribute="leading" constant="16" id="vPD-9N-6r3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Workouts" image="figure.gymnastics" catalog="system" id="FiF-mq-dZu"/>
+                    <tabBarItem key="tabBarItem" title="Exercise" image="figure.gymnastics" catalog="system" id="FiF-mq-dZu"/>
                     <connections>
                         <outlet property="tableView" destination="duo-Y6-zkt" id="mIh-5n-fAc"/>
                     </connections>
@@ -200,6 +216,7 @@
                         <segue destination="tTA-aN-XGq" kind="relationship" relationship="viewControllers" id="hDd-03-1zY"/>
                         <segue destination="HbF-AV-NBg" kind="relationship" relationship="viewControllers" id="tDU-Ut-syk"/>
                         <segue destination="adh-Sf-RRZ" kind="relationship" relationship="viewControllers" id="I6W-nv-ehL"/>
+                        <segue destination="J4g-u5-Ket" kind="relationship" relationship="viewControllers" id="DTr-xo-GaP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4z-D1-imO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -230,6 +247,7 @@
         <image name="figure.gymnastics" catalog="system" width="128" height="100"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="scalemass" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
