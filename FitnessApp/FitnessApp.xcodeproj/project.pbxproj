@@ -26,8 +26,9 @@
 		82A97C0C29FFFD9E00EDFF5C /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */; };
 		82A97C0E29FFFE2600EDFF5C /* WorkoutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
-		A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */; };
 		A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */; };
+		A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */; };
+		A64A24202A002A88003C3562 /* FirestoreScheduleExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A241F2A002A88003C3562 /* FirestoreScheduleExercise.swift */; };
 		A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72C29FC141300DE96CF /* AlertManager.swift */; };
 		A6A8A72F29FC145200DE96CF /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A72E29FC145200DE96CF /* Handlers.swift */; };
 		A6A8A73129FC154400DE96CF /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8A73029FC154400DE96CF /* Enum.swift */; };
@@ -41,6 +42,7 @@
 		A6EC5DB429FD4ACD005724D3 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A6EC5DB329FD4ACD005724D3 /* RappleProgressHUD */; };
 		A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */; };
 		A6EC5DBA29FD6E48005724D3 /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */; };
+		A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */; };
 		AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC8341D329FAC0DE006C2FC5 /* .gitignore */; };
 		AC8341D929FAC8D5006C2FC5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AC8341D829FAC8D5006C2FC5 /* FirebaseAnalytics */; };
 		AC8341DB29FAC8D5006C2FC5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AC8341DA29FAC8D5006C2FC5 /* FirebaseAuth */; };
@@ -90,8 +92,9 @@
 		82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutVC.swift; sourceTree = "<group>"; };
 		82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTVCell.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
-		A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseData.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreExcercise.swift; sourceTree = "<group>"; };
+		A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchedule.swift; sourceTree = "<group>"; };
+		A64A241F2A002A88003C3562 /* FirestoreScheduleExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreScheduleExercise.swift; sourceTree = "<group>"; };
 		A6A8A72C29FC141300DE96CF /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A6A8A72E29FC145200DE96CF /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		A6A8A73029FC154400DE96CF /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		A6EC5DB029FD3E1A005724D3 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = "<group>"; };
 		A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenVC.swift; sourceTree = "<group>"; };
 		A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
+		A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreScheduleManager .swift"; sourceTree = "<group>"; };
 		AC8341D329FAC0DE006C2FC5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +166,8 @@
 		3E1E81C129FAB95E0071FA55 /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				823A9A9329FEE00F00983882 /* GoogleService-Info.plist */,
 				A6416DC929FEE08800E2D292 /* models */,
-				A6416DC629FEDF6700E2D292 /* LocalData */,
 				A6EC5DAF29FD3DFE005724D3 /* FirestoreDb */,
 				A6A8A73429FC1CBA00DE96CF /* VC */,
 				A6A8A72B29FC139900DE96CF /* Helpers */,
@@ -195,18 +199,9 @@
 			path = FitnessAppUITests;
 			sourceTree = "<group>";
 		};
-		A6416DC629FEDF6700E2D292 /* LocalData */ = {
-			isa = PBXGroup;
-			children = (
-				A6416DC729FEDF8100E2D292 /* ExcerciseData.swift */,
-			);
-			path = LocalData;
-			sourceTree = "<group>";
-		};
 		A6416DC929FEE08800E2D292 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -214,7 +209,6 @@
 		A6A8A72B29FC139900DE96CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				823A9A9329FEE00F00983882 /* GoogleService-Info.plist */,
 				A6EC5DAC29FD3DAA005724D3 /* Firestore */,
 				A6A8A72C29FC141300DE96CF /* AlertManager.swift */,
 				A6A8A72E29FC145200DE96CF /* Handlers.swift */,
@@ -274,6 +268,7 @@
 			children = (
 				A6EC5DAD29FD3DB7005724D3 /* FirestoreUserManager.swift */,
 				A6B7E13029FF97F400E0155B /* FirestoreExcerciseManager.swift */,
+				A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -281,7 +276,10 @@
 		A6EC5DAF29FD3DFE005724D3 /* FirestoreDb */ = {
 			isa = PBXGroup;
 			children = (
+				A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */,
 				A6EC5DB029FD3E1A005724D3 /* FirestoreUser.swift */,
+				A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */,
+				A64A241F2A002A88003C3562 /* FirestoreScheduleExercise.swift */,
 			);
 			path = FirestoreDb;
 			sourceTree = "<group>";
@@ -457,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
+				A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */,
+				A64A24202A002A88003C3562 /* FirestoreScheduleExercise.swift in Sources */,
 				A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */,
 				82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */,
 				A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */,
@@ -476,7 +476,7 @@
 				A6A8A73829FC1D1A00DE96CF /* LaunchScreenVC.swift in Sources */,
 				82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */,
 				82A97C0C29FFFD9E00EDFF5C /* WorkoutVC.swift in Sources */,
-				A6416DC829FEDF8100E2D292 /* ExcerciseData.swift in Sources */,
+				A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */,
 				A6B7E13129FF97F400E0155B /* FirestoreExcerciseManager.swift in Sources */,
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,
