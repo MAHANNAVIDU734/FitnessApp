@@ -1,7 +1,7 @@
 import UIKit
 import RappleProgressHUD
 
-class WorkoutVC: UIViewController {
+class ExerciseVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,7 +17,7 @@ class WorkoutVC: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    private func fetchExerciseListFromFirestore(){
+    private func fetchExerciseListFromFirestore() {
         RappleActivityIndicatorView.startAnimating()
         FirestoreExcerciseManager.shared.getExerciseDataStoredOnFirestoreDb { status, message, data in
             if (status){
@@ -40,14 +40,14 @@ class WorkoutVC: UIViewController {
     }
 }
 
-extension WorkoutVC: UITableViewDelegate , UITableViewDataSource {
+extension ExerciseVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return excerciseList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutTVCell" , for: indexPath)
-        if let _cell = cell as? WorkoutTVCell {
+        if let _cell = cell as? ExerciseTVCell {
             _cell.config(firestoreExercise:excerciseList[indexPath.row] )
         }
         return cell

@@ -61,7 +61,7 @@
         <!--Workouts-->
         <scene sceneID="0NK-Yi-fem">
             <objects>
-                <viewController storyboardIdentifier="WorkoutVC" id="tTA-aN-XGq" customClass="WorkoutVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutVC" id="tTA-aN-XGq" customClass="ExerciseVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TRL-Bx-BVK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="64" width="361" height="614"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkoutTVCell" rowHeight="131" id="Y0n-m9-kBH" customClass="WorkoutTVCell" customModule="FitnessApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkoutTVCell" rowHeight="131" id="Y0n-m9-kBH" customClass="ExerciseTVCell" customModule="FitnessApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="361" height="131"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y0n-m9-kBH" id="8Vi-Je-2Oy">
@@ -154,7 +154,10 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="animationImg" destination="26M-PN-uZp" id="4Hp-dO-IbH"/>
                                                     <outlet property="cantainerView" destination="YR9-eZ-R07" id="2CP-B5-0nH"/>
+                                                    <outlet property="descriptionLbl" destination="WOP-2Z-zvx" id="pZ5-98-Hai"/>
+                                                    <outlet property="titleLbl" destination="iGp-2O-gUU" id="EpT-sY-FKz"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -231,10 +234,10 @@
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="theme">
-            <color red="0.0085014496000000005" green="0.034043148160000002" blue="0.1019675508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.008999999612569809" green="0.034000001847743988" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="title">
-            <color red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17599999904632568" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

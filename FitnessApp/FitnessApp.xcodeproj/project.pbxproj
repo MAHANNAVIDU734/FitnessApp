@@ -20,11 +20,12 @@
 		823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9329FEE00F00983882 /* GoogleService-Info.plist */; };
 		823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9529FEEEBC00983882 /* Auth.storyboard */; };
 		823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */; };
+		829F238E2A0169FE000895C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 829F238D2A0169FE000895C4 /* Kingfisher */; };
 		82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0529FFE10D00EDFF5C /* CardView.swift */; };
 		82A97C0829FFE51800EDFF5C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0729FFE51800EDFF5C /* CustomButton.swift */; };
 		82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */; };
-		82A97C0C29FFFD9E00EDFF5C /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */; };
-		82A97C0E29FFFE2600EDFF5C /* WorkoutTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */; };
+		82A97C0C29FFFD9E00EDFF5C /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */; };
+		82A97C0E29FFFE2600EDFF5C /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */; };
 		A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */; };
@@ -90,8 +91,8 @@
 		82A97C0529FFE10D00EDFF5C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		82A97C0729FFE51800EDFF5C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutVC.swift; sourceTree = "<group>"; };
-		82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTVCell.swift; sourceTree = "<group>"; };
+		82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
+		82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreExcercise.swift; sourceTree = "<group>"; };
 		A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchedule.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 			files = (
 				AC8341DD29FAC8D5006C2FC5 /* FirebaseCrashlytics in Frameworks */,
 				AC8341DF29FAC8D5006C2FC5 /* FirebaseFirestore in Frameworks */,
+				829F238E2A0169FE000895C4 /* Kingfisher in Frameworks */,
 				AC8341D929FAC8D5006C2FC5 /* FirebaseAnalytics in Frameworks */,
 				AC8341E129FAC8D5006C2FC5 /* FirebaseStorage in Frameworks */,
 				AC8341DB29FAC8D5006C2FC5 /* FirebaseAuth in Frameworks */,
@@ -324,8 +326,8 @@
 		A6ED56AC2A0163280012CD0A /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
-				82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */,
-				82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */,
+				82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */,
+				82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */,
 			);
 			path = Exercises;
 			sourceTree = "<group>";
@@ -382,6 +384,7 @@
 				AC8341DE29FAC8D5006C2FC5 /* FirebaseFirestore */,
 				AC8341E029FAC8D5006C2FC5 /* FirebaseStorage */,
 				A6EC5DB329FD4ACD005724D3 /* RappleProgressHUD */,
+				829F238D2A0169FE000895C4 /* Kingfisher */,
 			);
 			productName = FitnessApp;
 			productReference = 3E1E81BF29FAB95E0071FA55 /* FitnessApp.app */;
@@ -458,6 +461,7 @@
 			packageReferences = (
 				AC8341D729FAC8D5006C2FC5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				A6EC5DB229FD4ACD005724D3 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */,
+				829F238C2A0169FE000895C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3E1E81C029FAB95E0071FA55 /* Products */;
 			projectDirPath = "";
@@ -515,7 +519,7 @@
 				A6ED56AA2A0161C40012CD0A /* StartedScheduleVC.swift in Sources */,
 				A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */,
 				A6EC5DAE29FD3DB7005724D3 /* FirestoreUserManager.swift in Sources */,
-				82A97C0E29FFFE2600EDFF5C /* WorkoutTVCell.swift in Sources */,
+				82A97C0E29FFFE2600EDFF5C /* ExerciseTVCell.swift in Sources */,
 				A6EC5DBA29FD6E48005724D3 /* ProfileScreenVC.swift in Sources */,
 				A6EC5DA929FCF946005724D3 /* SignUpScreenVC.swift in Sources */,
 				A6A8A72F29FC145200DE96CF /* Handlers.swift in Sources */,
@@ -527,7 +531,7 @@
 				823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */,
 				A6A8A73829FC1D1A00DE96CF /* LaunchScreenVC.swift in Sources */,
 				82A97C0629FFE10D00EDFF5C /* CardView.swift in Sources */,
-				82A97C0C29FFFD9E00EDFF5C /* WorkoutVC.swift in Sources */,
+				82A97C0C29FFFD9E00EDFF5C /* ExerciseVC.swift in Sources */,
 				A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */,
 				A6B7E13129FF97F400E0155B /* FirestoreExcerciseManager.swift in Sources */,
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
@@ -899,6 +903,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		829F238C2A0169FE000895C4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		A6EC5DB229FD4ACD005724D3 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rjeprasad/RappleProgressHUD.git";
@@ -918,6 +930,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		829F238D2A0169FE000895C4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 829F238C2A0169FE000895C4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		A6EC5DB329FD4ACD005724D3 /* RappleProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A6EC5DB229FD4ACD005724D3 /* XCRemoteSwiftPackageReference "RappleProgressHUD" */;
