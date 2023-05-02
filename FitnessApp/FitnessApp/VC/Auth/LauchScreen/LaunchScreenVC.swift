@@ -10,7 +10,7 @@ class LaunchScreenVC: UIViewController {
     }
     
     func handleUserNavigation(isUserAuthenticated:Bool){
-        DispatchQueue.main.asyncAfter(deadline: (.now() + 5)) {
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 2)) {
             ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: isUserAuthenticated)
         }
     }

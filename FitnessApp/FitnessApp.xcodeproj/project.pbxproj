@@ -17,6 +17,7 @@
 		3E1E81DD29FAB9640071FA55 /* FitnessAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81DC29FAB9640071FA55 /* FitnessAppTests.swift */; };
 		3E1E81E729FAB9650071FA55 /* FitnessAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */; };
 		3E1E81E929FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */; };
+		822D59E22A01722D00A00F5D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822D59E12A01722D00A00F5D /* ProfileVC.swift */; };
 		823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9329FEE00F00983882 /* GoogleService-Info.plist */; };
 		823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9529FEEEBC00983882 /* Auth.storyboard */; };
 		823A9A9829FEEF6800983882 /* ApplicationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */; };
@@ -85,6 +86,7 @@
 		3E1E81E229FAB9640071FA55 /* FitnessAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1E81E629FAB9650071FA55 /* FitnessAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITests.swift; sourceTree = "<group>"; };
 		3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		822D59E12A01722D00A00F5D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		823A9A9329FEE00F00983882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		823A9A9529FEEEBC00983882 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		823A9A9729FEEF6800983882 /* ApplicationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceProvider.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				A6ED56AB2A0161CB0012CD0A /* Home */,
 				A6ED56A82A0161280012CD0A /* StartedSchedule */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
+				822D59E12A01722D00A00F5D /* ProfileVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -316,9 +319,9 @@
 				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
 				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
 				A6EC5DB829FD6E2D005724D3 /* Profile */,
+				A6ED56AC2A0163280012CD0A /* Exercises */,
 				A6ED56AF2A0163DF0012CD0A /* BMI */,
 				A6ED56AE2A0163C70012CD0A /* Schedules */,
-				A6ED56AC2A0163280012CD0A /* Exercises */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822D59E22A01722D00A00F5D /* ProfileVC.swift in Sources */,
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
 				A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */,
 				A64A24202A002A88003C3562 /* FirestoreScheduleExercise.swift in Sources */,
