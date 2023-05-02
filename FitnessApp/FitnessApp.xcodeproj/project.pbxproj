@@ -42,6 +42,7 @@
 		A6EC5DB429FD4ACD005724D3 /* RappleProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A6EC5DB329FD4ACD005724D3 /* RappleProgressHUD */; };
 		A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */; };
 		A6EC5DBA29FD6E48005724D3 /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */; };
+		A6ED56AA2A0161C40012CD0A /* StartedScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ED56A92A0161C40012CD0A /* StartedScheduleVC.swift */; };
 		A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */; };
 		AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC8341D329FAC0DE006C2FC5 /* .gitignore */; };
 		AC8341D929FAC8D5006C2FC5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AC8341D829FAC8D5006C2FC5 /* FirebaseAnalytics */; };
@@ -107,6 +108,7 @@
 		A6EC5DB029FD3E1A005724D3 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = "<group>"; };
 		A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenVC.swift; sourceTree = "<group>"; };
 		A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
+		A6ED56A92A0161C40012CD0A /* StartedScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedScheduleVC.swift; sourceTree = "<group>"; };
 		A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreScheduleManager .swift"; sourceTree = "<group>"; };
 		AC8341D329FAC0DE006C2FC5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,10 +228,8 @@
 		A6A8A73429FC1CBA00DE96CF /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
-				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
-				82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */,
-				82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */,
+				A6ED56AB2A0161CB0012CD0A /* Home */,
+				A6ED56A82A0161280012CD0A /* StartedSchedule */,
 				A6EC5DB829FD6E2D005724D3 /* Profile */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
 			);
@@ -298,6 +298,25 @@
 				A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A6ED56A82A0161280012CD0A /* StartedSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				A6ED56A92A0161C40012CD0A /* StartedScheduleVC.swift */,
+			);
+			path = StartedSchedule;
+			sourceTree = "<group>";
+		};
+		A6ED56AB2A0161CB0012CD0A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3E1E81C829FAB95E0071FA55 /* Main.storyboard */,
+				82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */,
+				82A97C0B29FFFD9E00EDFF5C /* WorkoutVC.swift */,
+				82A97C0D29FFFE2600EDFF5C /* WorkoutTVCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		AC8341D229FAC07F006C2FC5 /* Git */ = {
@@ -461,6 +480,7 @@
 				82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */,
 				A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */,
 				3E1E81C729FAB95E0071FA55 /* ViewController.swift in Sources */,
+				A6ED56AA2A0161C40012CD0A /* StartedScheduleVC.swift in Sources */,
 				A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */,
 				A6EC5DAE29FD3DB7005724D3 /* FirestoreUserManager.swift in Sources */,
 				82A97C0E29FFFE2600EDFF5C /* WorkoutTVCell.swift in Sources */,
