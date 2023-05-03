@@ -6,6 +6,12 @@ enum Storyboard: String {
     
 }
 
+enum StatesForOngoingActivity : String{
+    case Started
+    case Completed
+    case Idle
+}
+
 enum FirestoreCollections:String{
     case users = "users"
     case excercise = "excercise"
