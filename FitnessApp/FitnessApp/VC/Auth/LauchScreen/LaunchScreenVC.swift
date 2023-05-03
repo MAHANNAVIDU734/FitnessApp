@@ -6,7 +6,7 @@ class LaunchScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIsUserAuthenticatedOnFirebase()
+        fetchExerciseDataAndCache()
     }
     
     func handleUserNavigation(isUserAuthenticated:Bool){
@@ -37,7 +37,7 @@ class LaunchScreenVC: UIViewController {
     private func fetchFirestoreUser(firebaseUser:User){
         FirestoreUserManager.shared.getUserDetailsStoredOnFirestoreDb(firebaseUser:firebaseUser) { status, message, data in
             if (status){
-                var firestoreUser =  data as! FirestoreUser
+                let firestoreUser =  data as! FirestoreUser
                 Constants.currentLoggedInFireStoreUser = firestoreUser
                 self.handleUserNavigation(isUserAuthenticated: true)
             }else{
@@ -48,6 +48,20 @@ class LaunchScreenVC: UIViewController {
     
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
+    }
+    
+    private func fetchExerciseDataAndCache(){
+        FirestoreExcerciseManager.shared.getExerciseDataStoredOnFirestoreDb { status, message, data in
+            if (status){
+                let excerciseData = data as? [FirestoreExcercise]
+                if  let _excerciseData = excerciseData {
+                    Constants.exerciseDataOnFirestore = _excerciseData
+                }
+                self.checkIsUserAuthenticatedOnFirebase()
+            }else {
+                self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again !")
+            }
+        }
     }
     
     /*
