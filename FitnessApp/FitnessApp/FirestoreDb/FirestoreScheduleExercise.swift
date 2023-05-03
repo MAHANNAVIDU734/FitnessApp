@@ -5,6 +5,6 @@ class FirestoreScheduleExercise: Codable
     var sets: Int
     var weight: Int?
     var totalTime: Int // in  seconds
-    var startedAt: String
     var elapsedTime: Int  // milli seconds
+    var status:String = StatesForOngoingActivity.Idle.rawValue
 }
