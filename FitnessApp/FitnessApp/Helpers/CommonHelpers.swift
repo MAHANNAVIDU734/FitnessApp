@@ -1,10 +1,3 @@
-//
-//  CommonHelpers.swift
-//  FitnessApp
-//
-//  Created by AdminProject on 2023-04-30.
-//
-
 import Foundation
 
 
@@ -29,7 +22,7 @@ class CommonHelpers {
         }
     }
     
-    static func calculateTotalTimeInScheduleInSeconds(firestoreSchedule:FirestoreSchedule){
+    static func calculateTotalTimeForExerciseInSchedule(firestoreSchedule:FirestoreSchedule){
         if let exerciseData =    Constants.exerciseDataOnFirestore{
             exerciseData.forEach { firestoreExcercise in
                 firestoreSchedule.exerciseList.forEach { firestoreScheduleExercise in
@@ -41,5 +34,13 @@ class CommonHelpers {
             }
         }
         
+    }
+    
+    static func calculateTotalTimeForSchedule(firestoreSchedule:FirestoreSchedule)-> Int{
+        var totalTimeForScheduleInSeconds = 0
+        firestoreSchedule.exerciseList.forEach { firestoreScheduleExercise in
+            totalTimeForScheduleInSeconds += firestoreScheduleExercise.totalTime
+        }
+        return totalTimeForScheduleInSeconds
     }
 }
