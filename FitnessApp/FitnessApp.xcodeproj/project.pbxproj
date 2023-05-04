@@ -205,6 +205,22 @@
 			path = FitnessAppUITests;
 			sourceTree = "<group>";
 		};
+		A613E5E02A040A9A00C36649 /* CustomSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				A6ED56A82A0161280012CD0A /* StartedSchedule */,
+				A613E5E12A040AA800C36649 /* Create */,
+			);
+			path = CustomSchedules;
+			sourceTree = "<group>";
+		};
+		A613E5E12A040AA800C36649 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		A6416DC929FEE08800E2D292 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,9 +248,9 @@
 		A6A8A73429FC1CBA00DE96CF /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				A613E5E02A040A9A00C36649 /* CustomSchedules */,
 				A6ED56AD2A0163870012CD0A /* ExerciseDetail */,
 				A6ED56AB2A0161CB0012CD0A /* Home */,
-				A6ED56A82A0161280012CD0A /* StartedSchedule */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
 				822D59E12A01722D00A00F5D /* ProfileVC.swift */,
 			);
