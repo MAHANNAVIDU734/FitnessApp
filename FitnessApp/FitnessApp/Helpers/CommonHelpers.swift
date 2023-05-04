@@ -24,13 +24,15 @@ class CommonHelpers {
     
     static func calculateTotalTimeForExerciseInSchedule(firestoreSchedule:FirestoreSchedule){
         if let exerciseData =    Constants.exerciseDataOnFirestore{
-            exerciseData.forEach { firestoreExcercise in
-                firestoreSchedule.exerciseList.forEach { firestoreScheduleExercise in
+            exerciseDataLoop : for firestoreExcercise in exerciseData{
+                for firestoreScheduleExercise in firestoreSchedule.exerciseList{
                     if firestoreExcercise.excerciseId == firestoreScheduleExercise.excerciseId {
                         let totalTime =  (firestoreExcercise.duration * firestoreScheduleExercise.reps) * firestoreScheduleExercise.sets
                         firestoreScheduleExercise.totalTime = totalTime
+                        continue   exerciseDataLoop
                     }
                 }
+                
             }
         }
         
