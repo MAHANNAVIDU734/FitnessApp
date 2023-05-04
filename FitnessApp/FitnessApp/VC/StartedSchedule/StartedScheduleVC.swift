@@ -18,19 +18,20 @@ class StartedScheduleVC: UIViewController {
     private func getCurrentOnGoingExercise(){
         if let _currentExerciseSchedule = currentExerciseSchedule{
             if(_currentExerciseSchedule.status == StatesForOngoingActivity.Started.rawValue){
-                _currentExerciseSchedule.exerciseList.forEach { firestoreScheduleExercise in
+                for firestoreScheduleExercise in  _currentExerciseSchedule.exerciseList{
                     if ( firestoreScheduleExercise.status == StatesForOngoingActivity.Started.rawValue || firestoreScheduleExercise.status == StatesForOngoingActivity.Idle.rawValue ){
                         currentOnGoingExerciseInSchedule = firestoreScheduleExercise
                         enableStartPauseButtons()
                         bindElapsedTimeOnUi()
                         updateRemainigTimeValues()
+                        break
                     }else{
-                        // continue to next item
+                        continue
                     }
                 }
             }else{
                 resetCurrentStateOnSchedule()
-                // start the exercise from the begining
+                getCurrentOnGoingExercise()
             }
             
         }
@@ -94,29 +95,29 @@ class StartedScheduleVC: UIViewController {
      }
      */
     
-//    private func handleTimerTick(){
-//        if self.secondsRemaining > 0 {
-//            //            self.lblTimeOne.text = "\(self.secondsRemaining) seconds"
-//            self.secondsRemaining -= 1
-//        } else {
-//            self.timer?.invalidate()
-//        }
-//    }
-//
-//    private func initAndStartTimer(){
-//        self.timer =  Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
-//            self.handleTimerTick()
-//        }
-//    }
-//
-//
-//    @IBAction func actionPlay(_ sender: Any) {
-//        initAndStartTimer()
-//    }
-//
-//    @IBAction func actionPause(_ sender: Any) {
-//        self.timer?.invalidate()
-//    }
+    //    private func handleTimerTick(){
+    //        if self.secondsRemaining > 0 {
+    //            //            self.lblTimeOne.text = "\(self.secondsRemaining) seconds"
+    //            self.secondsRemaining -= 1
+    //        } else {
+    //            self.timer?.invalidate()
+    //        }
+    //    }
+    //
+    //    private func initAndStartTimer(){
+    //        self.timer =  Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+    //            self.handleTimerTick()
+    //        }
+    //    }
+    //
+    //
+    //    @IBAction func actionPlay(_ sender: Any) {
+    //        initAndStartTimer()
+    //    }
+    //
+    //    @IBAction func actionPause(_ sender: Any) {
+    //        self.timer?.invalidate()
+    //    }
     
     
 }
