@@ -27,6 +27,8 @@
 		82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */; };
 		82A97C0C29FFFD9E00EDFF5C /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */; };
 		82A97C0E29FFFE2600EDFF5C /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */; };
+		82D04E6E2A054855009CFFAA /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E6D2A054855009CFFAA /* ScheduleVC.swift */; };
+		82D04E702A0548CC009CFFAA /* SchedulTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */; };
 		A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */; };
@@ -97,6 +99,8 @@
 		82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
 		82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
+		82D04E6D2A054855009CFFAA /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
+		82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulTVCell.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreExcercise.swift; sourceTree = "<group>"; };
 		A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchedule.swift; sourceTree = "<group>"; };
@@ -267,7 +271,6 @@
 				A6ED56AD2A0163870012CD0A /* ExerciseDetail */,
 				A6ED56AB2A0161CB0012CD0A /* Home */,
 				A6A8A73529FC1CC600DE96CF /* Auth */,
-				822D59E12A01722D00A00F5D /* ProfileVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */,
+				822D59E12A01722D00A00F5D /* ProfileVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -376,6 +380,8 @@
 		A6ED56AE2A0163C70012CD0A /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
+				82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */,
+				82D04E6D2A054855009CFFAA /* ScheduleVC.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 			files = (
 				822D59E22A01722D00A00F5D /* ProfileVC.swift in Sources */,
 				A6EDD5512A049B3900BCBF99 /* AddToScheduleVC.swift in Sources */,
+				82D04E6E2A054855009CFFAA /* ScheduleVC.swift in Sources */,
 				A6EDD5532A049B5400BCBF99 /* SelectExerciseVC.swift in Sources */,
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
 				A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */,
@@ -597,6 +604,7 @@
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,
 				A6EC5DAB29FCFC6D005724D3 /* Extensions.swift in Sources */,
+				82D04E702A0548CC009CFFAA /* SchedulTVCell.swift in Sources */,
 				A6A8A73329FC1C8B00DE96CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
