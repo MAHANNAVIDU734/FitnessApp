@@ -107,6 +107,9 @@
                                                                                     <color key="tintColor" name="title"/>
                                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                     <state key="normal" image="arrow.right.circle.fill" catalog="system"/>
+                                                                                    <connections>
+                                                                                        <action selector="platAction:" destination="Of4-ea-ChW" eventType="touchUpInside" id="MfA-r2-4KQ"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                         </stackView>
@@ -139,8 +142,11 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="TotalDurationLbl" destination="kif-IG-WAx" id="gEq-dD-wnu"/>
                                                     <outlet property="backgroundImg" destination="gOe-dD-5U2" id="QSP-gW-Rmh"/>
                                                     <outlet property="mainView" destination="7cf-4c-u2d" id="yFV-ko-1EG"/>
+                                                    <outlet property="playBtn" destination="8oI-dP-9IA" id="fmh-uf-c2K"/>
+                                                    <outlet property="scheduleTitleLbl" destination="tm2-5Q-rOm" id="wzH-0N-Wa9"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -160,6 +166,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Add New"/>
+                                                <connections>
+                                                    <action selector="addNewScheduleAction:" destination="HbF-AV-NBg" eventType="touchUpInside" id="gW0-b1-8US"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

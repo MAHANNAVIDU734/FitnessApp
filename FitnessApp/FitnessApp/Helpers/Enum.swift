@@ -3,7 +3,7 @@ import Foundation
 enum Storyboard: String {
     case Auth
     case Main
-    
+    case Schedule
 }
 
 enum StatesForOngoingActivity : String{

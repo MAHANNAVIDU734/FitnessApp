@@ -14,6 +14,13 @@ class ScheduleVC: UIViewController {
     func setupView() {
         buttonView.layer.cornerRadius = 30
     }
+    func presentPopupView() {
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "SchedulePopUpVC")
+        UIApplication.topViewController()?.present(vc, animated: true)
+    }
+    @IBAction func addNewScheduleAction(_ sender: Any) {
+        presentPopupView()
+    }
 }
 
 extension ScheduleVC: UITableViewDelegate , UITableViewDataSource {

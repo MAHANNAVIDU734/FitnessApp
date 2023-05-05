@@ -70,4 +70,21 @@ extension Encodable {
     }
 }
 
-
+extension UIApplication {
+    
+    static func topViewController(base: UIViewController? = UIApplication.shared.delegate?.window??.rootViewController, forNoInternet: Bool = false) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        }
+        
+        if let presented = base?.presentedViewController {
+            if forNoInternet, let _ = presented as? UIAlertController {
+                presented.dismiss(animated: true, completion: nil)
+                return base
+            }
+            return topViewController(base: presented)
+        }
+        
+        return base
+    }
+}
