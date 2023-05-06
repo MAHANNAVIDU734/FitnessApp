@@ -21,7 +21,7 @@ class SchedulTVCell: UITableViewCell {
     func configCell() {
     }
     
-    @IBAction func platAction(_ sender: Any) {
+    @IBAction func playAction(_ sender: Any) {
         
     }
     
