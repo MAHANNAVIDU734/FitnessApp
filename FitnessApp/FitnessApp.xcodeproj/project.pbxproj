@@ -19,6 +19,7 @@
 		3E1E81E929FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */; };
 		820EA1572A063DB700060DD9 /* MyExcercieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1562A063DB700060DD9 /* MyExcercieVC.swift */; };
 		820EA1592A063E4600060DD9 /* MyExcercieTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1582A063E4600060DD9 /* MyExcercieTVCell.swift */; };
+		820EA15B2A0656CD00060DD9 /* PickExcerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA15A2A0656CD00060DD9 /* PickExcerciseVC.swift */; };
 		822D59E22A01722D00A00F5D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822D59E12A01722D00A00F5D /* ProfileVC.swift */; };
 		823A9A9429FEE00F00983882 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9329FEE00F00983882 /* GoogleService-Info.plist */; };
 		823A9A9629FEEEBC00983882 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823A9A9529FEEEBC00983882 /* Auth.storyboard */; };
@@ -96,6 +97,7 @@
 		3E1E81E829FAB9650071FA55 /* FitnessAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		820EA1562A063DB700060DD9 /* MyExcercieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExcercieVC.swift; sourceTree = "<group>"; };
 		820EA1582A063E4600060DD9 /* MyExcercieTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExcercieTVCell.swift; sourceTree = "<group>"; };
+		820EA15A2A0656CD00060DD9 /* PickExcerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickExcerciseVC.swift; sourceTree = "<group>"; };
 		822D59E12A01722D00A00F5D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		823A9A9329FEE00F00983882 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		823A9A9529FEEEBC00983882 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				82D04E732A0550F6009CFFAA /* Schedule.storyboard */,
 				820EA1562A063DB700060DD9 /* MyExcercieVC.swift */,
 				820EA1582A063E4600060DD9 /* MyExcercieTVCell.swift */,
+				820EA15A2A0656CD00060DD9 /* PickExcerciseVC.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */,
 				A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */,
 				3E1E81C729FAB95E0071FA55 /* ViewController.swift in Sources */,
+				820EA15B2A0656CD00060DD9 /* PickExcerciseVC.swift in Sources */,
 				820EA1592A063E4600060DD9 /* MyExcercieTVCell.swift in Sources */,
 				A6ED56AA2A0161C40012CD0A /* StartedScheduleVC.swift in Sources */,
 				82D04E722A0550D6009CFFAA /* SchedulePopUpVC.swift in Sources */,

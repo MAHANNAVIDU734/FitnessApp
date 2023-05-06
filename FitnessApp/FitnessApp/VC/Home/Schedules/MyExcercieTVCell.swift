@@ -34,8 +34,8 @@ class MyExcercieTVCell: UITableViewCell {
             weightStackView.isHidden = true
             return
         }
-        setCountLbl.text = "\(sat ?? 0.0)"
-        repCountLbl.text = "\(rep ?? 0.0)"
-        weightLbl.text = "\(weight ?? 0.0)"
+        setCountLbl.text = "\(_sat )"
+        repCountLbl.text = "\(_rep )"
+        weightLbl.text = "\(_weight )"
     }
 }

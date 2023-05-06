@@ -28,7 +28,9 @@ class ScheduleVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func addNewScheduleAction(_ sender: Any) {
-        presentPopupView()
+//        presentPopupView()
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
+        UIApplication.topViewController()?.present(vc, animated: true)
     }
 }
 

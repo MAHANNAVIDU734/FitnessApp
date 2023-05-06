@@ -8,8 +8,14 @@ class MyExcercieVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func navigateToPickExcerciseView(){
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     @IBAction func addExcerciceAction(_ sender: Any) {
+        navigateToPickExcerciseView()
     }
 }
 
