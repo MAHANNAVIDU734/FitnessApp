@@ -6,6 +6,8 @@ class SchedulePopUpVC: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!
     
+    var callBack: ActionHandler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -17,6 +19,7 @@ class SchedulePopUpVC: UIViewController {
     }
     
     @IBAction func createAction(_ sender: Any) {
+        callBack?(true, "")
     }
     
     @IBAction func cancelAction(_ sender: Any) {

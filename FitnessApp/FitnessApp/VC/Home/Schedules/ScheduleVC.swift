@@ -16,15 +16,19 @@ class ScheduleVC: UIViewController {
     }
     func presentPopupView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "SchedulePopUpVC")
+        if let _vc = vc as? SchedulePopUpVC {
+            _vc.callBack = { status, message in
+                self.navigateToMyExcerciseView()
+            }
+        }
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     func navigateToMyExcerciseView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "MyExcercieVC")
-        UIApplication.topViewController()?.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func addNewScheduleAction(_ sender: Any) {
-//        presentPopupView()
-        navigateToMyExcerciseView()
+        presentPopupView()
     }
 }
 
