@@ -24,6 +24,7 @@ class ExerciseVC: UIViewController {
                 print("Document Fetched******")
                 let excerciseData = data as? [FirestoreExcercise]
                 if  let _excerciseData = excerciseData {
+                    self.excerciseList.removeAll()
                     Constants.exerciseDataOnFirestore = _excerciseData
                     self.excerciseList.insert(contentsOf: _excerciseData, at: 0)
                 }
