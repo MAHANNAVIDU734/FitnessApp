@@ -52,7 +52,6 @@
 		A6EC5DB729FD4CAC005724D3 /* SignInScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */; };
 		A6EC5DBA29FD6E48005724D3 /* ProfileScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */; };
 		A6ED56AA2A0161C40012CD0A /* StartedScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ED56A92A0161C40012CD0A /* StartedScheduleVC.swift */; };
-		A6EDD5532A049B5400BCBF99 /* SelectExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDD5522A049B5400BCBF99 /* SelectExerciseVC.swift */; };
 		A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */; };
 		AC8341D429FAC0DE006C2FC5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AC8341D329FAC0DE006C2FC5 /* .gitignore */; };
 		AC8341D929FAC8D5006C2FC5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AC8341D829FAC8D5006C2FC5 /* FirebaseAnalytics */; };
@@ -127,7 +126,6 @@
 		A6EC5DB629FD4CAC005724D3 /* SignInScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenVC.swift; sourceTree = "<group>"; };
 		A6EC5DB929FD6E48005724D3 /* ProfileScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenVC.swift; sourceTree = "<group>"; };
 		A6ED56A92A0161C40012CD0A /* StartedScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedScheduleVC.swift; sourceTree = "<group>"; };
-		A6EDD5522A049B5400BCBF99 /* SelectExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExerciseVC.swift; sourceTree = "<group>"; };
 		A6EE063B2A00FE21002BEBB2 /* FirestoreScheduleManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreScheduleManager .swift"; sourceTree = "<group>"; };
 		AC8341D329FAC0DE006C2FC5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,7 +403,7 @@
 		A6EDD54E2A049B0900BCBF99 /* SelectExercise */ = {
 			isa = PBXGroup;
 			children = (
-				A6EDD5522A049B5400BCBF99 /* SelectExerciseVC.swift */,
+				820EA15A2A0656CD00060DD9 /* PickExcerciseVC.swift */,
 			);
 			path = SelectExercise;
 			sourceTree = "<group>";
@@ -415,7 +413,6 @@
 			children = (
 				820EA1562A063DB700060DD9 /* MyExcercieVC.swift */,
 				820EA1582A063E4600060DD9 /* MyExcercieTVCell.swift */,
-				820EA15A2A0656CD00060DD9 /* PickExcerciseVC.swift */,
 			);
 			path = AddToSchedule;
 			sourceTree = "<group>";
@@ -587,7 +584,6 @@
 			files = (
 				822D59E22A01722D00A00F5D /* ProfileVC.swift in Sources */,
 				82D04E6E2A054855009CFFAA /* ScheduleVC.swift in Sources */,
-				A6EDD5532A049B5400BCBF99 /* SelectExerciseVC.swift in Sources */,
 				3E1E81CD29FAB95E0071FA55 /* FitnessApp.xcdatamodeld in Sources */,
 				A6EE063C2A00FE21002BEBB2 /* FirestoreScheduleManager .swift in Sources */,
 				A64A24202A002A88003C3562 /* FirestoreScheduleExercise.swift in Sources */,
