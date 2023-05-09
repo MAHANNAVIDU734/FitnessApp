@@ -3,9 +3,10 @@ import UIKit
 import FirebaseFirestore
 import RappleProgressHUD
 import FirebaseStorage
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var uploadBtn: UIButton!
@@ -24,6 +25,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        fetchFirestoreUser()
     }
     
     func setupUI() {
@@ -46,6 +48,40 @@ class ProfileVC: UIViewController {
             updateUserDetailsOnFirestoreDb()
         }
     }
+    
+    private func fetchFirestoreUser(){
+        if let currentFirebaseAuthUser =  Constants.currentLoggedInFirebaseAuthUser {
+            RappleActivityIndicatorView.startAnimating()
+            FirestoreUserManager.shared.getUserDetailsStoredOnFirestoreDb(firebaseUser:currentFirebaseAuthUser) { status, message, data in
+                if (status){
+                    let firestoreUser =  data as! FirestoreUser
+                    Constants.currentLoggedInFireStoreUser = firestoreUser
+                    RappleActivityIndicatorView.stopAnimation()
+                }else{
+                    RappleActivityIndicatorView.stopAnimation()
+                    self.showErrorAlert(messageString: message!)
+                }
+            }
+        }else {
+            showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
+        }
+        
+    }
+    
+    private func bindUserDataToUi(firestoreUser:FirestoreUser,currentFirebaseAuthUser : User){
+        emailTxt.text = currentFirebaseAuthUser.email
+        
+        fullNameTxt.text = firestoreUser.fName
+        
+        if let _height = firestoreUser.height?.description,let _weight = firestoreUser.weight?.description,let _age = firestoreUser.age?.description,let _fitnessGoal = firestoreUser.fitnessGoal {
+            heightTxt.text = _height
+            weightTxt.text = _weight
+            ageTxt.text = _age
+            fitnessGoalTxt.text = _fitnessGoal
+        }
+        profileImg.load(urlString: firestoreUser.avatarUrl)
+    }
+    
     private func validateForm() -> Bool {
         
         var fName:String? = ""
@@ -201,6 +237,6 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
         self.dismiss(animated: true, completion: nil)
         if (photo != nil ){
             uploadImageAndGetUrl()
-        }        
+        }
     }
 }
