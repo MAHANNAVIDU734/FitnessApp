@@ -57,6 +57,7 @@ class ProfileVC: UIViewController {
                     let firestoreUser =  data as! FirestoreUser
                     Constants.currentLoggedInFireStoreUser = firestoreUser
                     RappleActivityIndicatorView.stopAnimation()
+                    self.bindUserDataToUi(firestoreUser: firestoreUser, currentFirebaseAuthUser: currentFirebaseAuthUser)
                 }else{
                     RappleActivityIndicatorView.stopAnimation()
                     self.showErrorAlert(messageString: message!)
@@ -84,8 +85,8 @@ class ProfileVC: UIViewController {
     
     private func validateForm() -> Bool {
         
-        var fName:String? = ""
-        var email :String? = ""
+        var fName:String? = fullNameTxt.text?.removingAllWhitespaces()
+        var email :String? = emailTxt.text
         var phoneNumber:String? = ""
         
         guard let _email = email else {
