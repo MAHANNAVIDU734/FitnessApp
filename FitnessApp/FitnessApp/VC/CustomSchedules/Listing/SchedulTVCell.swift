@@ -18,7 +18,9 @@ class SchedulTVCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {}
 
-    func configCell() {
+    func configCell(firestoreSchedule:FirestoreSchedule) {
+        scheduleTitleLbl.text = firestoreSchedule.scheduleTitle
+        TotalDurationLbl.text = firestoreSchedule.totalTime.description
     }
     
     @IBAction func playAction(_ sender: Any) {
