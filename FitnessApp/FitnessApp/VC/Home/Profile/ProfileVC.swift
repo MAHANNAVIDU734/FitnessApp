@@ -12,11 +12,11 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var fullNameTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var heightTxt: UILabel!
     @IBOutlet weak var weightTxt: UITextField!
     @IBOutlet weak var ageTxt: UITextField!
     @IBOutlet weak var fitnessGoalTxt: UITextField!
     @IBOutlet weak var signoutBtn: UIButton!
+    @IBOutlet weak var heightTxt: UITextField!
     
     private var profileAvatarImageUrl : String = DefaultPlaceHolderLinks.user_avatar.rawValue
     private var imagePickerController = UIImagePickerController()
