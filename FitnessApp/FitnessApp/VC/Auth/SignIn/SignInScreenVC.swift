@@ -86,6 +86,7 @@ class SignInScreenVC: UIViewController {
                         self.showErrorAlert(messageString: signInError!.localizedDescription)
                         return
                     }
+                    Constants.currentLoggedInFirebaseAuthUser = _authResult
                     FirestoreUserManager.shared.getUserDetailsStoredOnFirestoreDb(firebaseUser:_authResult) { status, message, data in
                         if (status){
                             var firestoreUser =  data as! FirestoreUser
