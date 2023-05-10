@@ -138,6 +138,35 @@ class ProfileVC: UIViewController {
             showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
         }
     }
+    
+    private func updateProfileImageOnFirestoreDb(){
+        let currentLoggedInFirebaseAuthUser =   Constants.currentLoggedInFirebaseAuthUser
+        if let _currentLoggedInFirebaseAuthUser = currentLoggedInFirebaseAuthUser  {
+            let updatedFirestoreUserObject = getAvatarUpdatedFirestoreUserObject()
+            if let _updatedFirestoreUserObject = updatedFirestoreUserObject {
+                RappleActivityIndicatorView.startAnimating()
+                FirestoreUserManager.shared.storeSignedUpUserDetailsOnFirestoreDb(firebaseUser: _currentLoggedInFirebaseAuthUser, firestoreUser: _updatedFirestoreUserObject) { status, message, data in
+                    if(status){
+                        RappleActivityIndicatorView.stopAnimation()
+                        AlertManager.shared.singleActionMessage(title: "Alert", message: "Profile Avatar Updated Successful!", actionButtonTitle: "Ok", vc: self) { action in
+                            
+                        }
+                    }else{
+                        RappleActivityIndicatorView.stopAnimation()
+                        self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
+                    }
+                }
+            }else{
+                RappleActivityIndicatorView.stopAnimation()
+                showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
+            }
+            
+        } else {
+            RappleActivityIndicatorView.stopAnimation()
+            showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
+        }
+    }
+    
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
@@ -173,12 +202,18 @@ class ProfileVC: UIViewController {
                 updatedLoggedInFireStoreUser?.fitnessGoal = _fitnessGoal
             }
         }
-        
-        updatedLoggedInFireStoreUser?.avatarUrl = profileAvatarImageUrl
-        
         return updatedLoggedInFireStoreUser
         
     }
+    
+    private func getAvatarUpdatedFirestoreUserObject()->FirestoreUser?{
+        var updatedLoggedInFireStoreUser =   Constants.currentLoggedInFireStoreUser
+        updatedLoggedInFireStoreUser?.avatarUrl = profileAvatarImageUrl
+        
+        return updatedLoggedInFireStoreUser
+    }
+    
+    
     private  func showImageSourcePickerAlert() {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
@@ -213,6 +248,7 @@ class ProfileVC: UIViewController {
     func uploadImageAndGetUrl(){
         self.uploadImageToFirebaseStorage(image: uploadImage!){ url in
             self.profileAvatarImageUrl = url?.absoluteString ?? DefaultPlaceHolderLinks.user_avatar.rawValue
+            self.updateProfileImageOnFirestoreDb()
         }
     }
     private func  uploadImageToFirebaseStorage(image :UIImage, completion: @escaping ((_ url: URL?) -> ())) {
@@ -245,8 +281,38 @@ class ProfileVC: UIViewController {
         handleUpdateProfileActionClick()
     }
     @IBAction func signoutAction(_ sender: Any) {
-        
+        AlertManager.shared.multipleActionMessage(title: "Alert", message: "Do You Want to Sign Out?", possitiveActionButtonTitle: "Sign Out", completionPossitiveAction: { action in
+            self.signOutFromTheApp()
+            
+        }, vc: self, negativeActionButtonTitle: "Cancel") { action in
+            
+        }
     }
+    
+    private func signOutFromTheApp(){
+        RappleActivityIndicatorView.startAnimating()
+        do { try
+            Auth.auth().signOut()
+            RappleActivityIndicatorView.stopAnimation()
+            clearDataAndNavigateAfterSignOut()
+        }catch {
+            RappleActivityIndicatorView.stopAnimation()
+            clearDataAndNavigateAfterSignOut()
+        }
+    }
+    
+    private func clearDataAndNavigateAfterSignOut(){
+        Constants.currentLoggedInFirebaseAuthUser = nil
+        Constants.currentLoggedInFireStoreUser = nil
+        self.handleUserNavigation(isUserAuthenticated: false)
+    }
+    
+    func handleUserNavigation(isUserAuthenticated:Bool){
+        DispatchQueue.main.asyncAfter(deadline: (.now() + 2)) {
+            ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: isUserAuthenticated)
+        }
+    }
+    
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
