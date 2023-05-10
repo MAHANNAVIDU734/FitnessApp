@@ -43,7 +43,7 @@ class ProfileVC: UIViewController {
         signoutBtn.layer.borderWidth = 1
         signoutBtn.layer.borderColor = UIColor.white.cgColor
     }
-    private func handleSignInActionClick(){
+    private func handleUpdateProfileActionClick(){
         if(validateForm()){
             updateUserDetailsOnFirestoreDb()
         }
@@ -74,10 +74,19 @@ class ProfileVC: UIViewController {
         
         fullNameTxt.text = firestoreUser.fName
         
-        if let _height = firestoreUser.height?.description,let _weight = firestoreUser.weight?.description,let _age = firestoreUser.age?.description,let _fitnessGoal = firestoreUser.fitnessGoal {
+        if let _height = firestoreUser.height?.description{
             heightTxt.text = _height
+        }
+        
+        if let _weight = firestoreUser.weight?.description{
             weightTxt.text = _weight
+        }
+        
+        if let _age = firestoreUser.age?.description{
             ageTxt.text = _age
+        }
+        
+        if let _fitnessGoal = firestoreUser.fitnessGoal {
             fitnessGoalTxt.text = _fitnessGoal
         }
         profileImg.load(urlString: firestoreUser.avatarUrl)
@@ -85,9 +94,7 @@ class ProfileVC: UIViewController {
     
     private func validateForm() -> Bool {
         
-        var fName:String? = fullNameTxt.text?.removingAllWhitespaces()
-        var email :String? = emailTxt.text
-        var phoneNumber:String? = ""
+        let email :String? = emailTxt.text
         
         guard let _email = email else {
             showErrorAlert(messageString: "Email Required!")
@@ -109,20 +116,25 @@ class ProfileVC: UIViewController {
         if let _currentLoggedInFirebaseAuthUser = currentLoggedInFirebaseAuthUser  {
             let updatedFirestoreUserObject = getUpdatedFirestoreUserObject()
             if let _updatedFirestoreUserObject = updatedFirestoreUserObject {
+                RappleActivityIndicatorView.startAnimating()
                 FirestoreUserManager.shared.storeSignedUpUserDetailsOnFirestoreDb(firebaseUser: _currentLoggedInFirebaseAuthUser, firestoreUser: _updatedFirestoreUserObject) { status, message, data in
                     if(status){
+                        RappleActivityIndicatorView.stopAnimation()
                         AlertManager.shared.singleActionMessage(title: "Alert", message: "Profile Update Successful!", actionButtonTitle: "Ok", vc: self) { action in
-                            //navigate back
+                            
                         }
                     }else{
+                        RappleActivityIndicatorView.stopAnimation()
                         self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
                     }
                 }
             }else{
+                RappleActivityIndicatorView.stopAnimation()
                 showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
             }
             
         } else {
+            RappleActivityIndicatorView.stopAnimation()
             showErrorAlert(messageString: "Something Went Wrong..Please Try Again by Closing the App! ")
         }
     }
@@ -131,26 +143,35 @@ class ProfileVC: UIViewController {
     }
     
     private func getUpdatedFirestoreUserObject()->FirestoreUser?{
-        var age:Int? = nil
-        var weight :Double? = nil
-        var height:Double? = nil
-        var fitnessGoal:String? = nil
+        var age:String? = ageTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        var weight :String? = weightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        var height:String? = heightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        var fitnessGoal:String? = fitnessGoalTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
         
         var updatedLoggedInFireStoreUser =   Constants.currentLoggedInFireStoreUser
-        if age != nil{
-            updatedLoggedInFireStoreUser?.age = age
+        
+        if let _age = age {
+            if !_age.isEmpty{
+                updatedLoggedInFireStoreUser?.age = Int(_age)
+            }
         }
         
-        if weight != nil{
-            updatedLoggedInFireStoreUser?.weight = weight
+        if let  _weight = weight{
+            if !_weight.isEmpty{
+                updatedLoggedInFireStoreUser?.weight = Double(_weight)
+            }
         }
         
-        if height != nil{
-            updatedLoggedInFireStoreUser?.height = height
+        if let  _height = height{
+            if !_height.isEmpty{
+                updatedLoggedInFireStoreUser?.height = Double(_height)
+            }
         }
         
-        if fitnessGoal != nil{
-            updatedLoggedInFireStoreUser?.fitnessGoal = fitnessGoal
+        if let  _fitnessGoal = fitnessGoal{
+            if !_fitnessGoal.isEmpty{
+                updatedLoggedInFireStoreUser?.fitnessGoal = _fitnessGoal
+            }
         }
         
         updatedLoggedInFireStoreUser?.avatarUrl = profileAvatarImageUrl
@@ -221,7 +242,7 @@ class ProfileVC: UIViewController {
         showImageSourcePickerAlert()
     }
     @IBAction func submitAction(_ sender: Any) {
-        
+        handleUpdateProfileActionClick()
     }
     @IBAction func signoutAction(_ sender: Any) {
         
