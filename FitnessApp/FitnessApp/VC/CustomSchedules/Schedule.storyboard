@@ -123,6 +123,7 @@
                     <connections>
                         <outlet property="cancelBtn" destination="bKv-OC-2mz" id="rop-xz-ntl"/>
                         <outlet property="createBtn" destination="pzd-4e-pn0" id="SAO-t3-K3p"/>
+                        <outlet property="newScheduleTitleTxt" destination="oZM-Ec-9Na" id="ODi-om-x5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

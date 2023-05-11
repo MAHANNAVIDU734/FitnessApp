@@ -14,7 +14,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var weightTxt: UITextField!
     @IBOutlet weak var ageTxt: UITextField!
-    @IBOutlet weak var fitnessGoalTxt: UITextField!
+    @IBOutlet weak var fitnessGoalTextView: UITextView!
     @IBOutlet weak var signoutBtn: UIButton!
     @IBOutlet weak var heightTxt: UITextField!
     
@@ -42,6 +42,8 @@ class ProfileVC: UIViewController {
         signoutBtn.layer.cornerRadius = signoutBtn.frame.height / 2
         signoutBtn.layer.borderWidth = 1
         signoutBtn.layer.borderColor = UIColor.white.cgColor
+        
+        fitnessGoalTextView.layer.cornerRadius = 5
     }
     private func handleUpdateProfileActionClick(){
         if(validateForm()){
@@ -87,7 +89,7 @@ class ProfileVC: UIViewController {
         }
         
         if let _fitnessGoal = firestoreUser.fitnessGoal {
-            fitnessGoalTxt.text = _fitnessGoal
+            fitnessGoalTextView.text = _fitnessGoal
         }
         profileImg.load(urlString: firestoreUser.avatarUrl)
     }
@@ -175,7 +177,7 @@ class ProfileVC: UIViewController {
         var age:String? = ageTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
         var weight :String? = weightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
         var height:String? = heightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
-        var fitnessGoal:String? = fitnessGoalTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        var fitnessGoal:String? = fitnessGoalTextView.text?.trimLeadingTralingNewlineWhiteSpaces()
         
         var updatedLoggedInFireStoreUser =   Constants.currentLoggedInFireStoreUser
         

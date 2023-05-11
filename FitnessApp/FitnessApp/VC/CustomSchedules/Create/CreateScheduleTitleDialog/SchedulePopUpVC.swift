@@ -5,6 +5,7 @@ class SchedulePopUpVC: UIViewController {
 
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var newScheduleTitleTxt: UITextField!
     
     var callBack: ActionHandler?
     
