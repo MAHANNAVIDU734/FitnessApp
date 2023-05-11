@@ -507,6 +507,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-dC-4IR">
                                 <rect key="frame" x="20" y="79" width="353" height="694"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Req-0N-Cyy">
+                                <rect key="frame" x="20" y="79" width="353" height="719"/>
+                                <color key="backgroundColor" red="0.008999999612569809" green="0.034000001847743988" blue="0.10199999809265137" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-7g-aCe">
                                 <rect key="frame" x="20" y="79" width="353" height="695"/>
                                 <subviews>
@@ -538,16 +542,16 @@
                                         <rect key="frame" x="0.0" y="40" width="353" height="655"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxF-XL-YgO">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="1021"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="5642"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hn-qF-o2P">
-                                                        <rect key="frame" x="155" y="329" width="41.333333333333343" height="362.33333333333326"/>
+                                                        <rect key="frame" x="155" y="329" width="41.333333333333343" height="4983.333333333333"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rr4-sh-eqA">
-                                                        <rect key="frame" x="16" y="16" width="321" height="989"/>
+                                                        <rect key="frame" x="16" y="16" width="321" height="5610"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1VU-Wx-s1i">
                                                                 <rect key="frame" x="0.0" y="0.0" width="321" height="200"/>
@@ -724,13 +728,13 @@ quadriceps (front of upper leg)</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEk-7V-1fN">
-                                                                <rect key="frame" x="0.0" y="762" width="321" height="227"/>
+                                                                <rect key="frame" x="0.0" y="762" width="321" height="4848"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.008999999612569809" green="0.034000001847743988" blue="0.10199999809265137" alpha="0.904528351868091" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.008999999612569809" green="0.034000001847743988" blue="0.10199999809265137" alpha="0.80373834103954089" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="3hn-qF-o2P" secondAttribute="bottom" constant="329.66666666666669" id="1sT-bT-KrP"/>
                                                     <constraint firstAttribute="trailing" secondItem="Rr4-sh-eqA" secondAttribute="trailing" constant="16" id="2KW-3d-x96"/>
@@ -773,11 +777,15 @@ quadriceps (front of upper leg)</string>
                         <color key="backgroundColor" name="theme"/>
                         <constraints>
                             <constraint firstItem="aVz-7g-aCe" firstAttribute="bottom" secondItem="QJ7-wM-Qzh" secondAttribute="bottom" constant="-44" id="00I-1g-bND"/>
+                            <constraint firstItem="Req-0N-Cyy" firstAttribute="top" secondItem="QJ7-wM-Qzh" secondAttribute="top" constant="20" id="BaQ-FX-hBm"/>
                             <constraint firstItem="e5L-yB-q4e" firstAttribute="leading" secondItem="QJ7-wM-Qzh" secondAttribute="leading" constant="16" id="CG4-eu-fbX"/>
                             <constraint firstItem="QJ7-wM-Qzh" firstAttribute="trailing" secondItem="e5L-yB-q4e" secondAttribute="trailing" constant="16" id="ITH-bc-FXb"/>
                             <constraint firstItem="aVz-7g-aCe" firstAttribute="top" secondItem="QJ7-wM-Qzh" secondAttribute="top" constant="20" id="OQT-Ba-W3Y"/>
+                            <constraint firstItem="QJ7-wM-Qzh" firstAttribute="trailing" secondItem="Req-0N-Cyy" secondAttribute="trailing" constant="20" id="P8k-sq-Nxv"/>
                             <constraint firstItem="gw6-dC-4IR" firstAttribute="top" secondItem="QJ7-wM-Qzh" secondAttribute="top" constant="20" id="PtY-Ag-EdH"/>
+                            <constraint firstItem="QJ7-wM-Qzh" firstAttribute="bottom" secondItem="Req-0N-Cyy" secondAttribute="bottom" constant="20" id="VCh-aA-hLb"/>
                             <constraint firstItem="QJ7-wM-Qzh" firstAttribute="bottom" secondItem="gw6-dC-4IR" secondAttribute="bottom" constant="45" id="Vlj-YI-v8m"/>
+                            <constraint firstItem="Req-0N-Cyy" firstAttribute="leading" secondItem="QJ7-wM-Qzh" secondAttribute="leading" constant="20" id="Woi-VJ-NAu"/>
                             <constraint firstItem="QJ7-wM-Qzh" firstAttribute="trailing" secondItem="gw6-dC-4IR" secondAttribute="trailing" constant="20" id="Xqs-rg-MqX"/>
                             <constraint firstItem="gw6-dC-4IR" firstAttribute="leading" secondItem="QJ7-wM-Qzh" secondAttribute="leading" constant="20" id="egP-rb-9Xx"/>
                             <constraint firstItem="QJ7-wM-Qzh" firstAttribute="bottom" secondItem="e5L-yB-q4e" secondAttribute="bottom" id="kfg-rO-lGz"/>
