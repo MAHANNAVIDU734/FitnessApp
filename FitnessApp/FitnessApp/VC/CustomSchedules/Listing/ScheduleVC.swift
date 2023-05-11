@@ -19,24 +19,28 @@ class ScheduleVC: UIViewController {
         buttonView.layer.cornerRadius = 30
     }
     
-    func presentPopupView() {
+    func presentEnterScheduleTitlePopupView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "CreateSchedulePopUpVC")
         if let _vc = vc as? CreateSchedulePopUpVC {
             _vc.callBack = { status, message in
-                self.navigateToMyExcerciseView()
+                if status {
+                    self.navigateToSelectExcerciseView()
+                }else{
+                    self.showErrorAlert(messageString: "Schedule Title Required!")
+                }
+                
             }
         }
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
-    func navigateToMyExcerciseView() {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Main, identifier: "ExerciseDetailVC")
+    func navigateToSelectExcerciseView() {
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
-//        presentPopupView()
-        navigateToMyExcerciseView()
+        presentEnterScheduleTitlePopupView()
     }
     
     private func fetchScheduleListFromFirestore() {
