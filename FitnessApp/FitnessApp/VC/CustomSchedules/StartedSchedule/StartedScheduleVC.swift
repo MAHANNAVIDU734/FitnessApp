@@ -3,6 +3,12 @@ import RappleProgressHUD
 
 class StartedScheduleVC: UIViewController {
     
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var startbtn: UIButton!
+    @IBOutlet weak var timeCountLbl: UILabel!
+    
+    
+    
     var currentExerciseSchedule:FirestoreSchedule?
     private var currentOnGoingExerciseInSchedule : FirestoreScheduleExercise?
     private var secondsRemaining :Int = 0
@@ -11,8 +17,14 @@ class StartedScheduleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        updateUI()
+    }
+    func updateUI() {
+        bottomView.clipsToBounds = true
+        bottomView.layer.cornerRadius = 20
+        bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        startbtn.layer.borderColor = UIColor.white.cgColor
+        startbtn.layer.borderWidth = 1
     }
     
     private func getCurrentOnGoingExercise(){
@@ -85,6 +97,12 @@ class StartedScheduleVC: UIViewController {
         }
     }
     
+    @IBAction func prevAction(_ sender: Any) {
+    }
+    @IBAction func startAction(_ sender: Any) {
+    }
+    @IBAction func nextAction(_ sender: Any) {
+    }
     /*
      // MARK: - Navigation
      
