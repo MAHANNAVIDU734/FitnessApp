@@ -36,8 +36,11 @@ class PickExcerciseVC: UIViewController {
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
     
-    private func navigateToAddExerciseToShcedule(){
+    private func navigateToAddExerciseToShcedule(selectedFirestoreExercise:FirestoreExcercise){
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "ExerciseDetailVC")
+        if let _vc = vc as? ExerciseDetailVC {
+            _vc.selectedFirestoreExercise = selectedFirestoreExercise
+        }
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
@@ -59,6 +62,6 @@ extension PickExcerciseVC: UITableViewDelegate , UITableViewDataSource {
         return 140
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigateToAddExerciseToShcedule()
+        navigateToAddExerciseToShcedule(selectedFirestoreExercise: excerciseList[indexPath.row] )
     }
 }
