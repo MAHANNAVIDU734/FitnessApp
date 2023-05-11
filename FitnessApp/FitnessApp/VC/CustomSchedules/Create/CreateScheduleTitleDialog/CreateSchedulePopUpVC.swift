@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SchedulePopUpVC: UIViewController {
+class CreateSchedulePopUpVC: UIViewController {
 
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!

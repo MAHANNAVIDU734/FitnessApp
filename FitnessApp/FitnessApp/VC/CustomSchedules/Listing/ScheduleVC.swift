@@ -20,8 +20,8 @@ class ScheduleVC: UIViewController {
     }
     
     func presentPopupView() {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "SchedulePopUpVC")
-        if let _vc = vc as? SchedulePopUpVC {
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "CreateSchedulePopUpVC")
+        if let _vc = vc as? CreateSchedulePopUpVC {
             _vc.callBack = { status, message in
                 self.navigateToMyExcerciseView()
             }
