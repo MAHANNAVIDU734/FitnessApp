@@ -3,6 +3,7 @@ import UIKit
 
 class SelectedExerciseDetailVC: UIViewController {
 
+    @IBOutlet weak var exerciseTitleLbl: UILabel!
     @IBOutlet weak var gifImgView: UIImageView!
     @IBOutlet weak var repCountTxt: UITextField!
     @IBOutlet weak var setCountTxt: UITextField!

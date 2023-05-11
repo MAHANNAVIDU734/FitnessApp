@@ -9,6 +9,7 @@ import UIKit
 
 class ExerciseDetailVC: UIViewController {
 
+    @IBOutlet weak var exerciseTitleLbl: UILabel!
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var exerciseDescriptionLbl: UILabel!
     @IBOutlet weak var EffectedBodyPartLbl: UILabel!
