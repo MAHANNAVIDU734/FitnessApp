@@ -1,7 +1,7 @@
 
 import UIKit
 
-class MyExcercieVC: UIViewController {
+class AddExcersiceListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,14 +19,14 @@ class MyExcercieVC: UIViewController {
     }
 }
 
-extension MyExcercieVC: UITableViewDelegate , UITableViewDataSource {
+extension AddExcersiceListVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyExcercieTVCell" , for: indexPath)
-        if let _cell = cell as? MyExcercieTVCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddExersiceListTVCell" , for: indexPath)
+        if let _cell = cell as? AddExersiceListTVCell {
             _cell.configCell(sat: 2, rep: 3.5, weight: 44)
 
         }

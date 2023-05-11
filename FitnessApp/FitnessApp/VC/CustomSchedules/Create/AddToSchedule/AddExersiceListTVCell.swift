@@ -1,7 +1,7 @@
 
 import UIKit
 
-class MyExcercieTVCell: UITableViewCell {
+class AddExersiceListTVCell: UITableViewCell {
 
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var backgroundImg: UIImageView!
