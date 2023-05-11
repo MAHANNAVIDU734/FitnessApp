@@ -40,6 +40,14 @@ class ExerciseVC: UIViewController {
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
+    
+    private func navigateToAddExerciseDetails(selectedFirestoreExercise:FirestoreExcercise){
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Main, identifier: "ExerciseDetailVC")
+        if let _vc = vc as? ExerciseDetailVC {
+            _vc.selectedFirestoreExercise = selectedFirestoreExercise
+        }
+        UIApplication.topViewController()?.present(vc, animated: true)
+    }
 }
 
 extension ExerciseVC: UITableViewDelegate , UITableViewDataSource {
@@ -58,7 +66,7 @@ extension ExerciseVC: UITableViewDelegate , UITableViewDataSource {
         return 140
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // navigate tot Exercise details
+        navigateToAddExerciseDetails(selectedFirestoreExercise: excerciseList[indexPath.row] )
     }
 }
 
