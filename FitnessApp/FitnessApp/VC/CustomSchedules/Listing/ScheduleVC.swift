@@ -30,7 +30,7 @@ class ScheduleVC: UIViewController {
     }
     
     func navigateToMyExcerciseView() {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Main, identifier: "ExerciseDetailVC")
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
