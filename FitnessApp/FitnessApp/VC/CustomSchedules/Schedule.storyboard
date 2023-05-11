@@ -794,9 +794,9 @@ quadriceps (front of upper leg)</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="EffectedBodyPartLbl" destination="zE3-BY-pnV" id="YBn-zh-pcK"/>
-                        <outlet property="equipmentLbl" destination="oq6-l5-boQ" id="2ri-gn-REv"/>
-                        <outlet property="exerciseDescriptionLbl" destination="GvQ-AL-QGj" id="rif-5M-SaP"/>
+                        <outlet property="EffectedBodyPartLbl" destination="bAS-IP-Pdy" id="ttS-S9-1Us"/>
+                        <outlet property="equipmentLbl" destination="qHd-mx-hk8" id="DyP-Zz-Gd3"/>
+                        <outlet property="exerciseDescriptionLbl" destination="Fez-2K-SHu" id="gyn-pK-A4s"/>
                         <outlet property="gifImgView" destination="Uq7-Zh-1jc" id="ySE-pG-Z8G"/>
                         <outlet property="repCountTxt" destination="81e-qg-JLL" id="B8o-Mh-1KX"/>
                         <outlet property="setCountTxt" destination="YVx-9Z-qNZ" id="r7p-Nl-Xpt"/>
