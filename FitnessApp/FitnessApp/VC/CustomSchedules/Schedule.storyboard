@@ -496,10 +496,10 @@
             </objects>
             <point key="canvasLocation" x="1492" y="-101"/>
         </scene>
-        <!--Exercise DetailVC-->
+        <!--Selected Exercise DetailVC-->
         <scene sceneID="HhH-vX-lW5">
             <objects>
-                <viewController storyboardIdentifier="ExerciseDetailVC" id="qe5-VJ-xzQ" customClass="ExerciseDetailVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedExerciseDetailVC" id="qe5-VJ-xzQ" customClass="SelectedExerciseDetailVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8N0-4e-Tce">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -712,7 +712,7 @@ quadriceps (front of upper leg)</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RED-OE-pMd">
                                                                         <rect key="frame" x="0.0" y="482.66666666666657" width="321" height="69.333333333333314"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight Loss:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bla-ls-dsm">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bla-ls-dsm">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="321" height="19.333333333333332"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -793,6 +793,15 @@ quadriceps (front of upper leg)</string>
                             <constraint firstItem="aVz-7g-aCe" firstAttribute="leading" secondItem="QJ7-wM-Qzh" secondAttribute="leading" constant="20" id="qy3-tf-7KU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EffectedBodyPartLbl" destination="zE3-BY-pnV" id="YBn-zh-pcK"/>
+                        <outlet property="equipmentLbl" destination="oq6-l5-boQ" id="2ri-gn-REv"/>
+                        <outlet property="exerciseDescriptionLbl" destination="GvQ-AL-QGj" id="rif-5M-SaP"/>
+                        <outlet property="gifImgView" destination="Uq7-Zh-1jc" id="ySE-pG-Z8G"/>
+                        <outlet property="repCountTxt" destination="81e-qg-JLL" id="B8o-Mh-1KX"/>
+                        <outlet property="setCountTxt" destination="YVx-9Z-qNZ" id="r7p-Nl-Xpt"/>
+                        <outlet property="weightLossTxt" destination="Ewf-pd-6nj" id="gjg-AW-Miw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5K-K4-zdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
