@@ -233,6 +233,7 @@
 		A613E5E12A040AA800C36649 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				A6E3E0792A0CDAE0003EF43E /* AddedExerciseList */,
 				A6EDD5542A049DCC00BCBF99 /* CreateScheduleTitleDialog */,
 				A6EDD54F2A049B1F00BCBF99 /* AddToSchedule */,
 				A6EDD54E2A049B0900BCBF99 /* SelectExercise */,
@@ -301,6 +302,13 @@
 				A6A8A73729FC1D1A00DE96CF /* LaunchScreenVC.swift */,
 			);
 			path = LauchScreen;
+			sourceTree = "<group>";
+		};
+		A6E3E0792A0CDAE0003EF43E /* AddedExerciseList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddedExerciseList;
 			sourceTree = "<group>";
 		};
 		A6EC5DA729FCF92D005724D3 /* SignUp */ = {
