@@ -515,13 +515,13 @@
                                 <rect key="frame" x="20" y="79" width="353" height="695"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LT1-mm-jMz">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8nh-JK-H6C">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-jR-Qoy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                         <color key="textColor" name="title"/>
                                                         <nil key="highlightedColor"/>
@@ -532,14 +532,13 @@
                                         <color key="backgroundColor" name="theme"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="8nh-JK-H6C" secondAttribute="trailing" id="PCd-7B-1iZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="8nh-JK-H6C" secondAttribute="bottom" id="hWf-zl-RcO"/>
+                                            <constraint firstAttribute="bottom" secondItem="8nh-JK-H6C" secondAttribute="bottom" constant="16" id="hWf-zl-RcO"/>
                                             <constraint firstItem="8nh-JK-H6C" firstAttribute="top" secondItem="LT1-mm-jMz" secondAttribute="top" id="o3w-kK-7gq"/>
-                                            <constraint firstAttribute="height" constant="40" id="paU-bD-bMM"/>
                                             <constraint firstItem="8nh-JK-H6C" firstAttribute="leading" secondItem="LT1-mm-jMz" secondAttribute="leading" id="rgX-2Y-s02"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-4V-MYi">
-                                        <rect key="frame" x="0.0" y="40" width="353" height="655"/>
+                                        <rect key="frame" x="0.0" y="50" width="353" height="645"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxF-XL-YgO">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="5642"/>
