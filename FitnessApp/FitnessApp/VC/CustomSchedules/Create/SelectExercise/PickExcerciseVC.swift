@@ -37,7 +37,7 @@ class PickExcerciseVC: UIViewController {
     }
     
     private func navigateToAddExerciseToShcedule(selectedFirestoreExercise:FirestoreExcercise){
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "ExerciseDetailVC")
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "SelectedExerciseDetailVC")
         if let _vc = vc as? SelectedExerciseDetailVC {
             _vc.selectedFirestoreExercise = selectedFirestoreExercise
         }
