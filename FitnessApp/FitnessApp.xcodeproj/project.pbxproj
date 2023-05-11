@@ -239,7 +239,6 @@
 				A6EDD5542A049DCC00BCBF99 /* CreateScheduleTitleDialog */,
 				A6EDD54F2A049B1F00BCBF99 /* AddToSchedule */,
 				A6EDD54E2A049B0900BCBF99 /* SelectExercise */,
-				82DD37372A0D110E00951C2A /* ExerciseDetailVC.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -310,6 +309,8 @@
 		A6E3E0792A0CDAE0003EF43E /* AddedExerciseList */ = {
 			isa = PBXGroup;
 			children = (
+				820EA1582A063E4600060DD9 /* AddExersiceListTVCell.swift */,
+				820EA1562A063DB700060DD9 /* AddExcersiceListVC.swift */,
 			);
 			path = AddedExerciseList;
 			sourceTree = "<group>";
@@ -421,8 +422,7 @@
 		A6EDD54F2A049B1F00BCBF99 /* AddToSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				820EA1562A063DB700060DD9 /* AddExcersiceListVC.swift */,
-				820EA1582A063E4600060DD9 /* AddExersiceListTVCell.swift */,
+				82DD37372A0D110E00951C2A /* ExerciseDetailVC.swift */,
 			);
 			path = AddToSchedule;
 			sourceTree = "<group>";
