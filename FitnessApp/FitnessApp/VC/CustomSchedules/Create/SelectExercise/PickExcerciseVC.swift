@@ -36,6 +36,11 @@ class PickExcerciseVC: UIViewController {
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
     
+    private func navigateToAddExerciseToShcedule(){
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "ExerciseDetailVC")
+        UIApplication.topViewController()?.present(vc, animated: true)
+    }
+    
 }
 
 extension PickExcerciseVC: UITableViewDelegate , UITableViewDataSource {
@@ -54,5 +59,6 @@ extension PickExcerciseVC: UITableViewDelegate , UITableViewDataSource {
         return 140
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigateToAddExerciseToShcedule()
     }
 }
