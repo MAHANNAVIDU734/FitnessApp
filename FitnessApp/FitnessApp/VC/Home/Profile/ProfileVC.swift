@@ -122,6 +122,7 @@ class ProfileVC: UIViewController {
                 FirestoreUserManager.shared.storeSignedUpUserDetailsOnFirestoreDb(firebaseUser: _currentLoggedInFirebaseAuthUser, firestoreUser: _updatedFirestoreUserObject) { status, message, data in
                     if(status){
                         RappleActivityIndicatorView.stopAnimation()
+                        Constants.currentLoggedInFireStoreUser = _updatedFirestoreUserObject
                         AlertManager.shared.singleActionMessage(title: "Alert", message: "Profile Update Successful!", actionButtonTitle: "Ok", vc: self) { action in
                             
                         }
