@@ -21,6 +21,11 @@ class SelectedExerciseDetailVC: UIViewController {
     
     private func bindExecerciseDetailsToUi(){
         gifImgView.kf.setImage(with: URL(string: selectedFirestoreExercise?.exerciseGIFs.first ?? ""))
+        exerciseTitleLbl.text = selectedFirestoreExercise?.exerciseTitle ?? ""
+        exerciseDescriptionLbl.text = selectedFirestoreExercise?.exerciseDescription ?? ""
+        EffectedBodyPartLbl.text = selectedFirestoreExercise?.targetMuscles ?? ""
+        let exerciseEquipments = selectedFirestoreExercise?.exerciseEquipments.joined(separator: ", ")
+        equipmentLbl.text = exerciseEquipments
     }
     
     @IBAction func addToScheduleAction(_ sender: Any) {
