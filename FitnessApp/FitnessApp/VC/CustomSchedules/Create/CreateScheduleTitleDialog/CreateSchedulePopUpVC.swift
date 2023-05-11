@@ -20,7 +20,12 @@ class CreateSchedulePopUpVC: UIViewController {
     }
     
     @IBAction func createAction(_ sender: Any) {
-        callBack?(true, "")
+        if let _title = newScheduleTitleTxt.text?.trimLeadingTralingNewlineWhiteSpaces(){
+            callBack?(!_title.isEmpty, _title)
+        }else{
+            callBack?(false, nil)
+        }
+        
     }
     
     @IBAction func cancelAction(_ sender: Any) {
