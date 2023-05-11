@@ -34,6 +34,7 @@
 		82D04E702A0548CC009CFFAA /* SchedulTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */; };
 		82D04E722A0550D6009CFFAA /* SchedulePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E712A0550D6009CFFAA /* SchedulePopUpVC.swift */; };
 		82D04E742A0550F6009CFFAA /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82D04E732A0550F6009CFFAA /* Schedule.storyboard */; };
+		82DD37382A0D110E00951C2A /* ExerciseDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD37372A0D110E00951C2A /* ExerciseDetailVC.swift */; };
 		A6416DC529FECE2F00E2D292 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */; };
 		A6416DCB29FEE09900E2D292 /* FirestoreExcercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */; };
 		A64A241E2A002A79003C3562 /* FirestoreSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */; };
@@ -109,6 +110,7 @@
 		82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulTVCell.swift; sourceTree = "<group>"; };
 		82D04E712A0550D6009CFFAA /* SchedulePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePopUpVC.swift; sourceTree = "<group>"; };
 		82D04E732A0550F6009CFFAA /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		82DD37372A0D110E00951C2A /* ExerciseDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailVC.swift; sourceTree = "<group>"; };
 		A6416DC429FECE2F00E2D292 /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
 		A6416DCA29FEE09900E2D292 /* FirestoreExcercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreExcercise.swift; sourceTree = "<group>"; };
 		A64A241D2A002A79003C3562 /* FirestoreSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreSchedule.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				A6EDD5542A049DCC00BCBF99 /* CreateScheduleTitleDialog */,
 				A6EDD54F2A049B1F00BCBF99 /* AddToSchedule */,
 				A6EDD54E2A049B0900BCBF99 /* SelectExercise */,
+				82DD37372A0D110E00951C2A /* ExerciseDetailVC.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				3E1E81C329FAB95E0071FA55 /* AppDelegate.swift in Sources */,
 				3E1E81C529FAB95E0071FA55 /* SceneDelegate.swift in Sources */,
 				A6EC5DAB29FCFC6D005724D3 /* Extensions.swift in Sources */,
+				82DD37382A0D110E00951C2A /* ExerciseDetailVC.swift in Sources */,
 				82D04E702A0548CC009CFFAA /* SchedulTVCell.swift in Sources */,
 				A6A8A73329FC1C8B00DE96CF /* Constants.swift in Sources */,
 			);
