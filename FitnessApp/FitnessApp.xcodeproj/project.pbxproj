@@ -191,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				823A9A9329FEE00F00983882 /* GoogleService-Info.plist */,
-				A6416DC929FEE08800E2D292 /* models */,
 				A6EC5DAF29FD3DFE005724D3 /* FirestoreDb */,
 				A6A8A73429FC1CBA00DE96CF /* VC */,
 				A6A8A72B29FC139900DE96CF /* Helpers */,
@@ -252,13 +251,6 @@
 				82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */,
 			);
 			path = Listing;
-			sourceTree = "<group>";
-		};
-		A6416DC929FEE08800E2D292 /* models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = models;
 			sourceTree = "<group>";
 		};
 		A6A8A72B29FC139900DE96CF /* Helpers */ = {
