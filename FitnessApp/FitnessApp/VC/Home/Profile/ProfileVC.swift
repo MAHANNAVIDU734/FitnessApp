@@ -175,10 +175,10 @@ class ProfileVC: UIViewController {
     }
     
     private func getUpdatedFirestoreUserObject()->FirestoreUser?{
-        var age:String? = ageTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
-        var weight :String? = weightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
-        var height:String? = heightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
-        var fitnessGoal:String? = fitnessGoalTextView.text?.trimLeadingTralingNewlineWhiteSpaces()
+        let age:String? = ageTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        let weight :String? = weightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        let height:String? = heightTxt.text?.trimLeadingTralingNewlineWhiteSpaces()
+        let fitnessGoal:String? = fitnessGoalTextView.text?.trimLeadingTralingNewlineWhiteSpaces()
         
         var updatedLoggedInFireStoreUser =   Constants.currentLoggedInFireStoreUser
         

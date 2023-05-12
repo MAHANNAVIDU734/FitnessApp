@@ -7,53 +7,43 @@ class FirestoreScheduleManager  {
     }()
     
     func createNewScheduleOnFirestoreDb(firestoreSchedule:FirestoreSchedule,completionWithPayload:CompletionHandlerWithData?){
-        let userId = Constants.currentLoggedInFireStoreUser?.id
+        let scheduleId = firestoreSchedule.scheduleId
         
-        if let _userId = userId{
-            let schedulesDocumentRef = Firestore.firestore().collection(FirestoreCollections.users.rawValue).document(_userId)
-            
-            guard let firestoreScheduleAsDictionary = firestoreSchedule.getDictionary() else {
-                completionWithPayload?(false,"Failed to Encode New User Object ",nil)
-                return
-            }
-            schedulesDocumentRef.setData(firestoreScheduleAsDictionary) { err in
-                if let err = err {
-                    completionWithPayload?(false,err.localizedDescription,nil)
-                    print("Error writing document: \(err)")
-                } else {
-                    completionWithPayload?(true,nil,nil)
-                    print("Document successfully written!")
-                }
-            }
-        }else{
-            completionWithPayload?(false,nil,nil)
+        let schedulesDocumentRef = Firestore.firestore().collection(FirestoreCollections.schedules.rawValue).document(scheduleId)
+        
+        guard let firestoreScheduleAsDictionary = firestoreSchedule.getDictionary() else {
+            completionWithPayload?(false,"Failed to Encode New User Object ",nil)
+            return
         }
-        
+        schedulesDocumentRef.setData(firestoreScheduleAsDictionary) { err in
+            if let err = err {
+                completionWithPayload?(false,err.localizedDescription,nil)
+                print("Error writing document: \(err)")
+            } else {
+                completionWithPayload?(true,nil,nil)
+                print("Document successfully written!")
+            }
+        }
     }
     
     func updaetCustomScheduleOnFirestoreDb(firestoreSchedule:FirestoreSchedule,completionWithPayload:CompletionHandlerWithData?){
-        let userId = Constants.currentLoggedInFireStoreUser?.id
+        let scheduleId = firestoreSchedule.scheduleId
         
-        if let _userId = userId{
-            let schedulesDocumentRef = Firestore.firestore().collection(FirestoreCollections.users.rawValue).document(_userId)
-            
-            guard let firestoreScheduleAsDictionary = firestoreSchedule.getDictionary() else {
-                completionWithPayload?(false,"Failed to Encode New User Object ",nil)
-                return
-            }
-            schedulesDocumentRef.setData(firestoreScheduleAsDictionary) { err in
-                if let err = err {
-                    completionWithPayload?(false,err.localizedDescription,nil)
-                    print("Error writing document: \(err)")
-                } else {
-                    completionWithPayload?(true,nil,nil)
-                    print("Document successfully written!")
-                }
-            }
-        }else{
-            completionWithPayload?(false,nil,nil)
+        let schedulesDocumentRef = Firestore.firestore().collection(FirestoreCollections.schedules.rawValue).document(scheduleId)
+        
+        guard let firestoreScheduleAsDictionary = firestoreSchedule.getDictionary() else {
+            completionWithPayload?(false,"Failed to Encode New User Object ",nil)
+            return
         }
-        
+        schedulesDocumentRef.setData(firestoreScheduleAsDictionary) { err in
+            if let err = err {
+                completionWithPayload?(false,err.localizedDescription,nil)
+                print("Error writing document: \(err)")
+            } else {
+                completionWithPayload?(true,nil,nil)
+                print("Document successfully written!")
+            }
+        }
     }
     
     /**

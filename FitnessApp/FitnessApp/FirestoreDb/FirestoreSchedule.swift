@@ -1,10 +1,9 @@
-class FirestoreSchedule: Codable
+struct FirestoreSchedule: Codable
 {
     var scheduleId:String
-    var exerciseGIFs: [String]
     var scheduleTitle: String
-    var elapsedTime: Int  // milli seconds
-    var totalTime: Int // in  seconds
+    var elapsedTime: Int = 0  // milli seconds
+    var totalTime: Int = 0  // in  seconds
     var status:String = StatesForOngoingActivity.Idle.rawValue
-    var exerciseList : [FirestoreScheduleExercise]
+    var exerciseList : [FirestoreScheduleExercise]? = nil
 }

@@ -6,6 +6,7 @@ class PickExcerciseVC: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     private var  excerciseList = [FirestoreExcercise]()
+    var firestoreSchedule:FirestoreSchedule?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -33,17 +33,20 @@ class StartedScheduleVC: UIViewController {
     private func getCurrentOnGoingExercise(){
         if let _currentExerciseSchedule = currentExerciseSchedule{
             if(_currentExerciseSchedule.status == StatesForOngoingActivity.Started.rawValue){
-                for firestoreScheduleExercise in  _currentExerciseSchedule.exerciseList{
-                    if ( firestoreScheduleExercise.status == StatesForOngoingActivity.Started.rawValue || firestoreScheduleExercise.status == StatesForOngoingActivity.Idle.rawValue ){
-                        currentOnGoingExerciseInSchedule = firestoreScheduleExercise
-                        enableStartPauseButtons()
-                        bindElapsedTimeOnUi()
-                        updateRemainigTimeValues()
-                        break
-                    }else{
-                        continue
+                if  let _firestoreScheduleExercisesList = _currentExerciseSchedule.exerciseList{
+                    for firestoreScheduleExercise in  _firestoreScheduleExercisesList{
+                        if ( firestoreScheduleExercise.status == StatesForOngoingActivity.Started.rawValue || firestoreScheduleExercise.status == StatesForOngoingActivity.Idle.rawValue ){
+                            currentOnGoingExerciseInSchedule = firestoreScheduleExercise
+                            enableStartPauseButtons()
+                            bindElapsedTimeOnUi()
+                            updateRemainigTimeValues()
+                            break
+                        }else{
+                            continue
+                        }
                     }
                 }
+                
             }else{
                 resetCurrentStateOnSchedule()
                 getCurrentOnGoingExercise()
@@ -74,13 +77,16 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func resetCurrentStateOnSchedule(){
-        if let _currentExerciseSchedule = currentExerciseSchedule{
+        if var _currentExerciseSchedule = currentExerciseSchedule{
             _currentExerciseSchedule.status = StatesForOngoingActivity.Idle.rawValue
             _currentExerciseSchedule.elapsedTime = 0
-            _currentExerciseSchedule.exerciseList.forEach { firestoreScheduleExercise in
-                firestoreScheduleExercise.elapsedTime = 0
-                firestoreScheduleExercise.status = StatesForOngoingActivity.Idle.rawValue
+            if let _scheduleExerciseList = _currentExerciseSchedule.exerciseList{
+                _scheduleExerciseList.forEach { firestoreScheduleExercise in
+                    firestoreScheduleExercise.elapsedTime = 0
+                    firestoreScheduleExercise.status = StatesForOngoingActivity.Idle.rawValue
+                }
             }
+            
             currentExerciseSchedule = _currentExerciseSchedule
             updateCustomScheduleDataOnFirestore()
         }
