@@ -35,12 +35,13 @@ class ScheduleVC: UIViewController {
     }
     
     func navigateToSelectExcerciseView() {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
-        presentEnterScheduleTitlePopupView()
+//        presentEnterScheduleTitlePopupView()
+        navigateToSelectExcerciseView()
     }
     
     private func fetchScheduleListFromFirestore() {

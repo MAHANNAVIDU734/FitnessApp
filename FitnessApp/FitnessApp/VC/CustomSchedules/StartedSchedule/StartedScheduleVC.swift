@@ -23,8 +23,11 @@ class StartedScheduleVC: UIViewController {
         bottomView.clipsToBounds = true
         bottomView.layer.cornerRadius = 20
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        startbtn.layer.borderColor = UIColor.white.cgColor
-        startbtn.layer.borderWidth = 1
+        startbtn.layer.borderColor = UIColor(named: "title")?.cgColor
+        startbtn.layer.borderWidth = 6
+        
+        startbtn.setImage(UIImage(systemName: "arrowtriangle.right.fill"), for: .normal)
+        startbtn.setImage(UIImage(systemName: "stop.fill"), for: .selected)
     }
     
     private func getCurrentOnGoingExercise(){
@@ -100,6 +103,7 @@ class StartedScheduleVC: UIViewController {
     @IBAction func prevAction(_ sender: Any) {
     }
     @IBAction func startAction(_ sender: Any) {
+        startbtn.isSelected.toggle()
     }
     @IBAction func nextAction(_ sender: Any) {
     }
