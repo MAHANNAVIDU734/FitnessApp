@@ -30,6 +30,7 @@
 		82A97C0A29FFEE3600EDFF5C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */; };
 		82A97C0C29FFFD9E00EDFF5C /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */; };
 		82A97C0E29FFFE2600EDFF5C /* ExerciseTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */; };
+		82B0721E2A0EA8C000EC85D5 /* BMIDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0721D2A0EA8C000EC85D5 /* BMIDetailsVC.swift */; };
 		82D04E6E2A054855009CFFAA /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E6D2A054855009CFFAA /* ScheduleVC.swift */; };
 		82D04E702A0548CC009CFFAA /* SchedulTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */; };
 		82D04E722A0550D6009CFFAA /* CreateSchedulePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D04E712A0550D6009CFFAA /* CreateSchedulePopUpVC.swift */; };
@@ -107,6 +108,7 @@
 		82A97C0929FFEE3600EDFF5C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		82A97C0B29FFFD9E00EDFF5C /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
 		82A97C0D29FFFE2600EDFF5C /* ExerciseTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTVCell.swift; sourceTree = "<group>"; };
+		82B0721D2A0EA8C000EC85D5 /* BMIDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BMIDetailsVC.swift; path = FitnessApp/VC/CustomSchedules/Create/BMIDetailsVC.swift; sourceTree = SOURCE_ROOT; };
 		82D04E6D2A054855009CFFAA /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		82D04E6F2A0548CC009CFFAA /* SchedulTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulTVCell.swift; sourceTree = "<group>"; };
 		82D04E712A0550D6009CFFAA /* CreateSchedulePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSchedulePopUpVC.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		A6ED56AF2A0163DF0012CD0A /* BMI */ = {
 			isa = PBXGroup;
 			children = (
+				82B0721D2A0EA8C000EC85D5 /* BMIDetailsVC.swift */,
 			);
 			path = BMI;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				82A97C0E29FFFE2600EDFF5C /* ExerciseTVCell.swift in Sources */,
 				A6EC5DA929FCF946005724D3 /* SignUpScreenVC.swift in Sources */,
 				A6A8A72F29FC145200DE96CF /* Handlers.swift in Sources */,
+				82B0721E2A0EA8C000EC85D5 /* BMIDetailsVC.swift in Sources */,
 				A6EC5DB129FD3E1A005724D3 /* FirestoreUser.swift in Sources */,
 				A6A8A72D29FC141300DE96CF /* AlertManager.swift in Sources */,
 				A6A8A73129FC154400DE96CF /* Enum.swift in Sources */,
