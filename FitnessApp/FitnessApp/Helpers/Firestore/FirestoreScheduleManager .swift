@@ -68,4 +68,23 @@ class FirestoreScheduleManager  {
         }
     }
     
+    // This is used to  fetch single Schedule data  stored on  Firestore Db     */
+    func getScheduleDataFromShceduleIdStoredOnFirestoreDb(scheduleId:String,completionWithPayload:CompletionHandlerWithData?){
+        let scheduleDocumentRef = Firestore.firestore().collection(FirestoreCollections.schedules.rawValue).document(scheduleId)
+        scheduleDocumentRef.getDocument { document, error in
+            if let error = error as NSError? {
+                let errorMessage = "Error getting document: \(error.localizedDescription)"
+                completionWithPayload?(false,errorMessage,nil)
+            }else {
+                if let _scheduleDataDictoanary = document?.data() {
+                    let firestoreSchedule =  FirestoreSchedule(dictionary: _scheduleDataDictoanary)
+                    completionWithPayload?(true,nil,firestoreSchedule)
+                }else{
+                    let errorMessage = "Schedule Data Not Avaialble!"
+                    completionWithPayload?(false,errorMessage,nil)
+                }
+            }
+        }
+        
+    }
 }
