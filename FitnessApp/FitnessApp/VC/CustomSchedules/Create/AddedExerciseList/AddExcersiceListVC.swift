@@ -9,6 +9,7 @@ class AddExcersiceListVC: UIViewController {
     var currentSchedule:FirestoreSchedule?
     
     override func viewDidLoad() {
+        selectedScheduleTitleLbl.text = currentSchedule?.scheduleTitle
         super.viewDidLoad()
     }
     
