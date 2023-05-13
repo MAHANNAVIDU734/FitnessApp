@@ -33,8 +33,8 @@ class StartedScheduleVC: UIViewController {
     private func getCurrentOnGoingExercise(){
         if let _currentExerciseSchedule = currentExerciseSchedule{
             if(_currentExerciseSchedule.status == StatesForOngoingActivity.Started.rawValue){
-                if  let _firestoreScheduleExercisesList = _currentExerciseSchedule.exerciseList{
-                    for firestoreScheduleExercise in  _firestoreScheduleExercisesList{
+                if  !_currentExerciseSchedule.exerciseList.isEmpty{
+                    for firestoreScheduleExercise in  _currentExerciseSchedule.exerciseList{
                         if ( firestoreScheduleExercise.status == StatesForOngoingActivity.Started.rawValue || firestoreScheduleExercise.status == StatesForOngoingActivity.Idle.rawValue ){
                             currentOnGoingExerciseInSchedule = firestoreScheduleExercise
                             enableStartPauseButtons()
@@ -80,15 +80,14 @@ class StartedScheduleVC: UIViewController {
         if var _currentExerciseSchedule = currentExerciseSchedule{
             _currentExerciseSchedule.status = StatesForOngoingActivity.Idle.rawValue
             _currentExerciseSchedule.elapsedTime = 0
-            if let _scheduleExerciseList = _currentExerciseSchedule.exerciseList{
-                _scheduleExerciseList.forEach { firestoreScheduleExercise in
-                    firestoreScheduleExercise.elapsedTime = 0
-                    firestoreScheduleExercise.status = StatesForOngoingActivity.Idle.rawValue
+            if !_currentExerciseSchedule.exerciseList.isEmpty{
+                for var scheduleExerciseList in _currentExerciseSchedule.exerciseList{
+                    scheduleExerciseList.elapsedTime = 0
+                    scheduleExerciseList.status = StatesForOngoingActivity.Idle.rawValue
                 }
+                currentExerciseSchedule = _currentExerciseSchedule
+                updateCustomScheduleDataOnFirestore()
             }
-            
-            currentExerciseSchedule = _currentExerciseSchedule
-            updateCustomScheduleDataOnFirestore()
         }
     }
     
