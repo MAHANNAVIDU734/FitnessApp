@@ -50,7 +50,7 @@ class CreateSchedulePopUpVC: UIViewController {
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setNavigationBarHidden(true, animated: true)
         present(navigationController, animated: true){
-            self.dismiss(animated: true)
+//             self.dismiss(animated: true)
         }
     }
 }
