@@ -21,21 +21,18 @@ class AddExersiceListTVCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {}
 
-    func configCell(sat: Double?, rep: Double?, weight: Double?) {
-        guard let _sat = sat else {
-            setStackView.isHidden = true
-            return
-        }
-        guard let _rep = rep else {
-            repStackView.isHidden = true
-            return
-        }
-        guard let _weight = weight else {
+    func configCell(scheduleExercise:FirestoreScheduleExercise) {
+        let firestoreExercise =  Constants.exerciseDataOnFirestore?.first(where: { firestoreExcercise in
+            firestoreExcercise.excerciseId == scheduleExercise.excerciseId
+          })
+        excerciseTitleLbl.text = firestoreExercise?.exerciseTitle
+        
+        if  scheduleExercise.weight <= 0  {
             weightStackView.isHidden = true
             return
         }
-        setCountLbl.text = "\(_sat )"
-        repCountLbl.text = "\(_rep )"
-        weightLbl.text = "\(_weight )"
+        setCountLbl.text = "\(scheduleExercise.sets )"
+        repCountLbl.text = "\(scheduleExercise.reps )"
+        weightLbl.text = "\(scheduleExercise.weight ) Kg"
     }
 }
