@@ -13,6 +13,11 @@ class AddExcersiceListVC: UIViewController {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func startSchedule(){
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     @IBAction func addExcerciceAction(_ sender: Any) {
         navigateToPickExcerciseView()
