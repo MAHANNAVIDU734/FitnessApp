@@ -2,7 +2,7 @@
 import UIKit
 
 class ExerciseDetailVC: UIViewController {
-
+    
     @IBOutlet weak var exerciseTitleLbl: UILabel!
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var exerciseDescriptionLbl: UILabel!
@@ -23,5 +23,9 @@ class ExerciseDetailVC: UIViewController {
         EffectedBodyPartLbl.text = selectedFirestoreExercise?.targetMuscles ?? ""
         let exerciseEquipments = selectedFirestoreExercise?.exerciseEquipments.joined(separator: ", ")
         equipmentLbl.text = exerciseEquipments
+    }
+    
+    private func closeVc(){
+        dismiss(animated: true)
     }
 }
