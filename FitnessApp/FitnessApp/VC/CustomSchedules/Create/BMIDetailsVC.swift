@@ -15,6 +15,7 @@ class BMIDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         bindBMIvalueToUi()
+        fetchExerciseListFromFirestore()
         super.viewWillAppear(animated)
     }
     
@@ -46,7 +47,7 @@ class BMIDetailsVC: UIViewController {
                     self.excerciseListRelatedToBMIValue.removeAll()
                     Constants.exerciseDataOnFirestore = _excerciseData
                 }
-                self.tableView.reloadData()
+                self.filterExcerciseDataForBMIValue()
                 RappleActivityIndicatorView.stopAnimation()
             }else{
                 RappleActivityIndicatorView.stopAnimation()
@@ -64,6 +65,7 @@ class BMIDetailsVC: UIViewController {
                     excerciseListRelatedToBMIValue.append(firestoreExcercise)
                 }
             }
+            self.tableView.reloadData()
         }
     }
     
