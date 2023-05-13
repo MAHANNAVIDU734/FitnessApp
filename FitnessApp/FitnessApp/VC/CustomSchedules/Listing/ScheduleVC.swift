@@ -41,35 +41,16 @@ class ScheduleVC: UIViewController {
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
-    private func createNewScheduleOnFirestore(scheduleTitle:String){
-        RappleActivityIndicatorView.startAnimating()
-        let firestoreSchedule =  FirestoreSchedule(scheduleId: CommonHelpers.randomString(lenth: 12), scheduleTitle: scheduleTitle)
-        FirestoreScheduleManager.shared.createNewScheduleOnFirestoreDb(firestoreSchedule: firestoreSchedule) { status, message, data in
-            if (status){
-                print("Schedule Created******")
-                RappleActivityIndicatorView.stopAnimation()
-                self.navigateToSelectExcerciseView(firestoreSchedule: firestoreSchedule)
-            }else{
-                RappleActivityIndicatorView.stopAnimation()
-                self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again !")
-            }
-        }
-    }
-    
     func navigateToSelectExcerciseView(firestoreSchedule:FirestoreSchedule) {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
         if let _vc = vc as? PickExcerciseVC {
             _vc.firestoreSchedule = firestoreSchedule
         }
-        
-        // let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
-//        UIApplication.topViewController()?.dismiss(animated: true)
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
         presentEnterScheduleTitlePopupView()
-        //        presentEnterScheduleTitlePopupView()
     }
     
     private func fetchScheduleListFromFirestore() {
