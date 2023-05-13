@@ -46,7 +46,10 @@ class ExerciseVC: UIViewController {
         if let _vc = vc as? ExerciseDetailVC {
             _vc.selectedFirestoreExercise = selectedFirestoreExercise
         }
-        UIApplication.topViewController()?.present(vc, animated: true)
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true)
     }
 }
 
