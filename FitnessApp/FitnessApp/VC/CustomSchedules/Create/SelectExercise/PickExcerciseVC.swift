@@ -49,7 +49,7 @@ class PickExcerciseVC: UIViewController {
                 RappleActivityIndicatorView.stopAnimation()
             }else{
                 RappleActivityIndicatorView.stopAnimation()
-                self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again !")
+
             }
         }
     }
@@ -64,8 +64,13 @@ class PickExcerciseVC: UIViewController {
             _vc.selectedFirestoreExercise = selectedFirestoreExercise
             _vc.selectedFirestoreSchedule = firestoreSchedule
         }
-        //        UIApplication.topViewController()?.dismiss(animated: true)
-        UIApplication.topViewController()?.present(vc, animated: true)
+
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+
+        present(navigationController, animated: true, completion: nil)
     }
     
 }
