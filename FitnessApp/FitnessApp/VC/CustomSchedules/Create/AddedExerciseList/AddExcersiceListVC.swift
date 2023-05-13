@@ -13,12 +13,26 @@ class AddExcersiceListVC: UIViewController {
     
     func navigateToPickExcerciseView(){
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let _vc = vc as? PickExcerciseVC {
+            _vc.firestoreSchedule = currentSchedule
+        }
+        
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true)
     }
     
     func startSchedule(){
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let _vc = vc as? StartedScheduleVC {
+            _vc.currentSchedule = currentSchedule
+        }
+        
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true)
     }
 
     @IBAction func addExcerciceAction(_ sender: Any) {
@@ -30,6 +44,7 @@ class AddExcersiceListVC: UIViewController {
     }
     
     @IBAction func startScheduleAction(_ sender: Any) {
+        startSchedule()
     }
 }
 
