@@ -13,6 +13,11 @@ class PickExcerciseVC: UIViewController {
         fetchExerciseListFromFirestore()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchScheduleDetailsFromFirestore()
+        super.viewWillAppear(animated)
+    }
+    
     private func fetchExerciseListFromFirestore() {
         RappleActivityIndicatorView.startAnimating()
         FirestoreExcerciseManager.shared.getExerciseDataStoredOnFirestoreDb { status, message, data in
@@ -33,6 +38,22 @@ class PickExcerciseVC: UIViewController {
         }
     }
     
+    private func fetchScheduleDetailsFromFirestore() {
+        RappleActivityIndicatorView.startAnimating()
+        FirestoreScheduleManager.shared.getScheduleDataFromShceduleIdStoredOnFirestoreDb(scheduleId: firestoreSchedule!.scheduleId) { status, message, data in
+            if (status){
+                print("ScheduleDetails Fetched******")
+                if  let _firestoreSchedule = data as? FirestoreSchedule {
+                    self.firestoreSchedule = _firestoreSchedule
+                }
+                RappleActivityIndicatorView.stopAnimation()
+            }else{
+                RappleActivityIndicatorView.stopAnimation()
+                self.showErrorAlert(messageString: "Something Went Wrong..Please Try Again !")
+            }
+        }
+    }
+    
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
@@ -41,7 +62,9 @@ class PickExcerciseVC: UIViewController {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "SelectedExerciseDetailVC")
         if let _vc = vc as? SelectedExerciseDetailVC {
             _vc.selectedFirestoreExercise = selectedFirestoreExercise
+            _vc.selectedFirestoreSchedule = firestoreSchedule
         }
+        //        UIApplication.topViewController()?.dismiss(animated: true)
         UIApplication.topViewController()?.present(vc, animated: true)
     }
     
