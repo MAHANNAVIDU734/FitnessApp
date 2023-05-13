@@ -178,7 +178,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-tE-bY3">
-                                        <rect key="frame" x="0.0" y="66" width="393" height="557"/>
+                                        <rect key="frame" x="0.0" y="66" width="393" height="541"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddExersiceListTVCell" rowHeight="157" id="ejQ-yZ-x2L" customClass="AddExersiceListTVCell" customModule="FitnessApp" customModuleProvider="target">
@@ -343,10 +343,10 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOE-EH-LvZ">
-                                        <rect key="frame" x="0.0" y="639" width="393" height="120"/>
+                                        <rect key="frame" x="0.0" y="623" width="393" height="136"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-Aa-iqv">
-                                                <rect key="frame" x="16" y="16" width="361" height="88"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-Aa-iqv">
+                                                <rect key="frame" x="16" y="16" width="361" height="104"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7t-yt-jaZ" customClass="CustomButton" customModule="FitnessApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
@@ -361,7 +361,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-jO-UoM" customClass="CustomButton" customModule="FitnessApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44" width="361" height="44"/>
+                                                        <rect key="frame" x="0.0" y="60" width="361" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="iFS-uy-dDu"/>
                                                         </constraints>
