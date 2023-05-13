@@ -22,22 +22,14 @@ class CommonHelpers {
         }
     }
     
-    static func calculateTotalTimeForExerciseInSchedule(firestoreSchedule:FirestoreSchedule){
-        if let exerciseData =    Constants.exerciseDataOnFirestore{
-            exerciseDataLoop : for firestoreExcercise in exerciseData{
-                if !firestoreSchedule.exerciseList.isEmpty {
-                    for var firestoreScheduleExercise in firestoreSchedule.exerciseList{
-                        if firestoreExcercise.excerciseId == firestoreScheduleExercise.excerciseId {
-                            let totalTime =  (firestoreExcercise.duration * firestoreScheduleExercise.reps) * firestoreScheduleExercise.sets
-                            firestoreScheduleExercise.totalTime = totalTime
-                            continue   exerciseDataLoop
-                        }
-                    }
-                }
-                
+    static func calculateTotalTimeForExerciseInSchedule(firestoreSchedule:FirestoreSchedule)-> Int{
+        var totlaTime = 0
+        if !firestoreSchedule.exerciseList.isEmpty {
+            for  firestoreScheduleExercise in firestoreSchedule.exerciseList{
+                totlaTime += firestoreScheduleExercise.totalTime
             }
         }
-        
+        return totlaTime
     }
     
     static func calculateTotalTimeForSchedule(firestoreSchedule:FirestoreSchedule)-> Int{
