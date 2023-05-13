@@ -2,12 +2,11 @@
 import UIKit
 
 class CreateSchedulePopUpVC: UIViewController {
-
+    
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var newScheduleTitleTxt: UITextField!
     
-    var callBack: ActionHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +20,37 @@ class CreateSchedulePopUpVC: UIViewController {
     
     @IBAction func createAction(_ sender: Any) {
         if let _title = newScheduleTitleTxt.text?.trimLeadingTralingNewlineWhiteSpaces(){
-            callBack?(!_title.isEmpty, _title)
+            if _title.isEmpty {
+                self.showErrorAlert(messageString: "Schedule Title Required!")
+            }else{
+                let firestoreSchedule =  FirestoreSchedule(scheduleId: CommonHelpers.randomString(lenth: 12), scheduleTitle: _title)
+                self.navigateToSelectExcerciseView(firestoreSchedule:firestoreSchedule )
+            }
         }else{
-            callBack?(false, nil)
+            self.showErrorAlert(messageString: "Schedule Title Required!")
         }
-        
+    }
+    
+    private func showErrorAlert(messageString:String){
+        AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        ApplicationServiceProvider.shared.manageUserDirection(isUserAuthenticated: true)
+        dismiss(animated: true)
+    }
+    
+    
+    func navigateToSelectExcerciseView(firestoreSchedule:FirestoreSchedule) {
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
+        if let _vc = vc as? PickExcerciseVC {
+            _vc.firestoreSchedule = firestoreSchedule
+        }
+        
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true){
+            self.dismiss(animated: true)
+        }
     }
 }
