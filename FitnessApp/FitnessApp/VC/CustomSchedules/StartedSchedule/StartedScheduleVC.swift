@@ -7,6 +7,8 @@ class StartedScheduleVC: UIViewController {
     @IBOutlet weak var startbtn: UIButton!
     @IBOutlet weak var timeCountLbl: UILabel!
     
+    private var isPaused:Bool = true
+    
 
     var currentSchedule:FirestoreSchedule?
     private var currentOnGoingExerciseInSchedule : FirestoreScheduleExercise?
@@ -17,6 +19,7 @@ class StartedScheduleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isPaused = !startbtn.isSelected
         updateUI()
         setUpOnGoingExcerciseDetails()
     }
@@ -25,8 +28,7 @@ class StartedScheduleVC: UIViewController {
         getCurrentOnGoingExercise()
         if currentOnGoingExerciseInSchedule != nil {
             updateRemainigTimeInitially()
-            initAndStartTimerForOnGoingExercise()
-            initAndStartTimerForSyncDataWithRemote()
+            checkPlayPauseStateAndStartTimers()    
         }
     }
     
@@ -75,6 +77,7 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func handleScheduleCompletion(){
+        startbtn.isSelected.toggle()
         resetCurrentStateOnSchedule()
         AlertManager.shared.singleActionMessage(title: "Alert",message:  "Schedule is Completed!" , actionButtonTitle: "Ok", vc: self) { action in
             self.dismiss(animated: true)
@@ -98,10 +101,6 @@ class StartedScheduleVC: UIViewController {
     private func bindRemainingExerciseTimeOnUi(){
         let remamingTimeInString =   secondsToHoursMinutesSecondsStr(seconds: secondsRemaining)
         timeCountLbl.text = remamingTimeInString
-    }
-    
-    private func enableStartPauseButtons(){
-        
     }
     
     private func resetCurrentStateOnSchedule(){
@@ -132,11 +131,15 @@ class StartedScheduleVC: UIViewController {
     }
     
     @IBAction func prevAction(_ sender: Any) {
+        
     }
     @IBAction func startAction(_ sender: Any) {
         startbtn.isSelected.toggle()
+        isPaused = !startbtn.isSelected
+        checkPlayPauseStateAndStartTimers()
     }
     @IBAction func nextAction(_ sender: Any) {
+        
     }
     
     
@@ -200,6 +203,16 @@ class StartedScheduleVC: UIViewController {
         }else{
             updateElapsedTimeOnCurrentExercise()
             updateScheduleWithCurrentStateOfOnGoingExcercise()
+        }
+    }
+    
+    private func checkPlayPauseStateAndStartTimers(){
+        if !isPaused{
+            initAndStartTimerForOnGoingExercise()
+            initAndStartTimerForSyncDataWithRemote()
+        }else{
+            exerciseCountdownTimer?.invalidate()
+            scheduleDataSyncingCountdownTimer?.invalidate()
         }
     }
     
