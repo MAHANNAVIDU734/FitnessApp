@@ -26,11 +26,25 @@ class ScheduleVC: UIViewController {
     
     func presentEnterScheduleTitlePopupView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "CreateSchedulePopUpVC")
-        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
-        navigationController.modalPresentationStyle = .overCurrentContext
-        navigationController.setNavigationBarHidden(true, animated: true)
-        present(navigationController, animated: true)
+//        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+//        navigationController.modalPresentationStyle = .overCurrentContext
+//        navigationController.setNavigationBarHidden(true, animated: true)
+//        present(navigationController, animated: true)
+        
+        UIApplication.topViewController()?.present(vc, animated: true)
     }
+    
+    func navigateToStartSchedule(firestoreSchedule:FirestoreSchedule){
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if let _vc = vc as? StartedScheduleVC {
+            _vc.currentExerciseSchedule = firestoreSchedule
+        }
+        
+        UIApplication.topViewController()?.present(vc, animated: true)
+    }
+
 
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
@@ -59,6 +73,7 @@ class ScheduleVC: UIViewController {
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
+    
 }
 
 extension ScheduleVC: UITableViewDelegate , UITableViewDataSource {
@@ -76,4 +91,9 @@ extension ScheduleVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigateToStartSchedule(firestoreSchedule: firestoreScheduleList[indexPath.row] )
+    }
 }
+
