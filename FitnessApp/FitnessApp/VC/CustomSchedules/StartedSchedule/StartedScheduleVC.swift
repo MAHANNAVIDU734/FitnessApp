@@ -30,9 +30,23 @@ class StartedScheduleVC: UIViewController {
     private func setUpOnGoingExcerciseDetails(){
         getCurrentOnGoingExercise()
         if currentOnGoingExerciseInSchedule != nil {
+            bindExerciseDetailToUi()
             updateRemainigTimeInitially()
             checkPlayPauseStateAndStartTimers()    
         }
+    }
+    
+    private func bindExerciseDetailToUi(){
+      let firestoreExercise =  Constants.exerciseDataOnFirestore?.first(where: { firestoreExcercise in
+          firestoreExcercise.excerciseId == currentOnGoingExerciseInSchedule?.excerciseId
+        })
+        
+        gitImageView.kf.setImage(with: URL(string: firestoreExercise?.exerciseGIFs.first ?? ""))
+        titleLbl.text = firestoreExercise?.exerciseTitle ?? ""
+        descriptionLbl.text = firestoreExercise?.exerciseDescription ?? ""
+        bodyPartLbl.text = firestoreExercise?.targetMuscles ?? ""
+        let exerciseEquipments = firestoreExercise?.exerciseEquipments.joined(separator: ", ")
+        equipmentLbl.text = exerciseEquipments
     }
     
     func updateUI() {
