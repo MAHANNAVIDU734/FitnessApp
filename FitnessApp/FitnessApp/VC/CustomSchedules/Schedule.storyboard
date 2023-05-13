@@ -396,6 +396,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="selectedScheduleTitleLbl" destination="FGa-km-HaH" id="kam-xi-bze"/>
                         <outlet property="tableView" destination="7TL-tE-bY3" id="ONC-Cm-aDL"/>
                     </connections>
                 </viewController>
