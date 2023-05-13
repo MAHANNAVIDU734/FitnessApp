@@ -35,10 +35,10 @@ class ScheduleVC: UIViewController {
     }
     
     func navigateToStartSchedule(firestoreSchedule:FirestoreSchedule){
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "StartedScheduleVC")
+        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "AddExcersiceListVC")
 //        self.navigationController?.pushViewController(vc, animated: true)
         
-        if let _vc = vc as? StartedScheduleVC {
+        if let _vc = vc as? AddExcersiceListVC {
             _vc.currentSchedule = firestoreSchedule
         }
         
