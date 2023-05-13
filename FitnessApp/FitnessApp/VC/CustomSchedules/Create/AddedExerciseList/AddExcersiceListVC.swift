@@ -5,6 +5,8 @@ class AddExcersiceListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var currentSchedule:FirestoreSchedule?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
