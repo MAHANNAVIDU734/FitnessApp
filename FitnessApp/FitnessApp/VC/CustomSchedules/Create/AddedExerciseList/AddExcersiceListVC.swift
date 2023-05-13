@@ -10,6 +10,7 @@ class AddExcersiceListVC: UIViewController {
     
     override func viewDidLoad() {
         selectedScheduleTitleLbl.text = currentSchedule?.scheduleTitle
+        tableView.reloadData()
         super.viewDidLoad()
     }
     
@@ -53,12 +54,12 @@ class AddExcersiceListVC: UIViewController {
 extension AddExcersiceListVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return currentSchedule!.exerciseList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddExersiceListTVCell" , for: indexPath)
         if let _cell = cell as? AddExersiceListTVCell {
-            _cell.configCell(sat: 2, rep: 3.5, weight: 44)
+            _cell.configCell(scheduleExercise: currentSchedule!.exerciseList[indexPath.row])
 
         }
         return cell
