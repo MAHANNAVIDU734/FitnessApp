@@ -144,23 +144,41 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhJ-qn-SD8">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Schedule Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGa-km-HaH">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-MD-NOk">
                                                 <rect key="frame" x="16" y="0.0" width="361" height="50"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                                <color key="textColor" name="title"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8g-Dx-AMT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="Qmn-IP-ZYu"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="backAction:" destination="1vV-iy-RFW" eventType="touchUpInside" id="Qp0-tR-Yhs"/>
+                                                            <action selector="backBtn:" destination="9GM-Gx-kd0" eventType="touchUpInside" id="74s-3c-2ho"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Schedule Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGa-km-HaH">
+                                                        <rect key="frame" x="40" y="0.0" width="321" height="50"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                        <color key="textColor" name="title"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="FGa-km-HaH" secondAttribute="trailing" constant="16" id="At5-ED-E9G"/>
-                                            <constraint firstItem="FGa-km-HaH" firstAttribute="top" secondItem="dhJ-qn-SD8" secondAttribute="top" id="bOQ-k1-yf5"/>
-                                            <constraint firstAttribute="bottom" secondItem="FGa-km-HaH" secondAttribute="bottom" id="t4t-Dk-w87"/>
-                                            <constraint firstItem="FGa-km-HaH" firstAttribute="leading" secondItem="dhJ-qn-SD8" secondAttribute="leading" constant="16" id="zm5-aN-bKM"/>
+                                            <constraint firstItem="hAg-MD-NOk" firstAttribute="leading" secondItem="dhJ-qn-SD8" secondAttribute="leading" constant="16" id="5qn-q1-WmZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="hAg-MD-NOk" secondAttribute="bottom" id="Yki-O4-9w6"/>
+                                            <constraint firstAttribute="trailing" secondItem="hAg-MD-NOk" secondAttribute="trailing" constant="16" id="glw-jt-9b8"/>
+                                            <constraint firstItem="hAg-MD-NOk" firstAttribute="top" secondItem="dhJ-qn-SD8" secondAttribute="top" id="mih-fI-EZW"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-tE-bY3">
-                                        <rect key="frame" x="0.0" y="66" width="393" height="617"/>
+                                        <rect key="frame" x="0.0" y="66" width="393" height="557"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddExersiceListTVCell" rowHeight="157" id="ejQ-yZ-x2L" customClass="AddExersiceListTVCell" customModule="FitnessApp" customModuleProvider="target">
@@ -325,27 +343,45 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOE-EH-LvZ">
-                                        <rect key="frame" x="0.0" y="699" width="393" height="60"/>
+                                        <rect key="frame" x="0.0" y="639" width="393" height="120"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7t-yt-jaZ" customClass="CustomButton" customModule="FitnessApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="0.0" width="361" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="RPz-XN-nyR"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Add Excercices"/>
-                                                <connections>
-                                                    <action selector="addExcerciceAction:" destination="1vV-iy-RFW" eventType="touchUpInside" id="VaT-KV-LNJ"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mb8-Aa-iqv">
+                                                <rect key="frame" x="16" y="16" width="361" height="88"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7t-yt-jaZ" customClass="CustomButton" customModule="FitnessApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="RPz-XN-nyR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Add Excercices"/>
+                                                        <connections>
+                                                            <action selector="addExcerciceAction:" destination="1vV-iy-RFW" eventType="touchUpInside" id="VaT-KV-LNJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-jO-UoM" customClass="CustomButton" customModule="FitnessApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="44" width="361" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="iFS-uy-dDu"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Start Schedule"/>
+                                                        <connections>
+                                                            <action selector="addExcerciceAction:" destination="1vV-iy-RFW" eventType="touchUpInside" id="rKQ-Tk-oe3"/>
+                                                            <action selector="startScheduleAction:" destination="1vV-iy-RFW" eventType="touchUpInside" id="miW-US-B8H"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="t7t-yt-jaZ" firstAttribute="top" secondItem="XOE-EH-LvZ" secondAttribute="top" id="5Qm-oC-yb0"/>
-                                            <constraint firstItem="t7t-yt-jaZ" firstAttribute="leading" secondItem="XOE-EH-LvZ" secondAttribute="leading" constant="16" id="GbV-hu-mIU"/>
-                                            <constraint firstAttribute="bottom" secondItem="t7t-yt-jaZ" secondAttribute="bottom" constant="16" id="dAa-oI-1wy"/>
-                                            <constraint firstAttribute="trailing" secondItem="t7t-yt-jaZ" secondAttribute="trailing" constant="16" id="km5-Jv-3ea"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mb8-Aa-iqv" secondAttribute="bottom" constant="16" id="39a-A9-Oy3"/>
+                                            <constraint firstItem="Mb8-Aa-iqv" firstAttribute="top" secondItem="XOE-EH-LvZ" secondAttribute="top" constant="16" id="7fY-PG-div"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mb8-Aa-iqv" secondAttribute="trailing" constant="16" id="O0t-bk-XBL"/>
+                                            <constraint firstItem="Mb8-Aa-iqv" firstAttribute="leading" secondItem="XOE-EH-LvZ" secondAttribute="leading" constant="16" id="lTG-Fe-VUQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
