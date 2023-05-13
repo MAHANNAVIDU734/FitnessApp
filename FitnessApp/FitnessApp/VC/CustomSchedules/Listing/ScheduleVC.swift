@@ -39,7 +39,7 @@ class ScheduleVC: UIViewController {
 //        self.navigationController?.pushViewController(vc, animated: true)
         
         if let _vc = vc as? StartedScheduleVC {
-            _vc.currentExerciseSchedule = firestoreSchedule
+            _vc.currentSchedule = firestoreSchedule
         }
         
         UIApplication.topViewController()?.present(vc, animated: true)

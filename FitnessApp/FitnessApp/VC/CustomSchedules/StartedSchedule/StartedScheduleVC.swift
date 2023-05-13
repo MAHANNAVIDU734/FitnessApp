@@ -7,18 +7,29 @@ class StartedScheduleVC: UIViewController {
     @IBOutlet weak var startbtn: UIButton!
     @IBOutlet weak var timeCountLbl: UILabel!
     
-    
-    
-    var currentExerciseSchedule:FirestoreSchedule?
+
+    var currentSchedule:FirestoreSchedule?
     private var currentOnGoingExerciseInSchedule : FirestoreScheduleExercise?
+    
     private var secondsRemaining :Int = 0
     private var exerciseCountdownTimer:Timer?
-    private var scheduleCountdownTimer:Timer?
+    private var scheduleDataSyncingCountdownTimer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        setUpOnGoingExcerciseDetails()
     }
+    
+    private func setUpOnGoingExcerciseDetails(){
+        getCurrentOnGoingExercise()
+        if currentOnGoingExerciseInSchedule != nil {
+            updateRemainigTimeInitially()
+            initAndStartTimerForOnGoingExercise()
+            initAndStartTimerForSyncDataWithRemote()
+        }
+    }
+    
     func updateUI() {
         bottomView.clipsToBounds = true
         bottomView.layer.cornerRadius = 20
@@ -31,45 +42,62 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func getCurrentOnGoingExercise(){
-        if let _currentExerciseSchedule = currentExerciseSchedule{
+        currentOnGoingExerciseInSchedule = nil
+        if let _currentExerciseSchedule = currentSchedule{
             if(_currentExerciseSchedule.status == StatesForOngoingActivity.Started.rawValue){
                 if  !_currentExerciseSchedule.exerciseList.isEmpty{
+                    var isScheduleCompleted = true
                     for firestoreScheduleExercise in  _currentExerciseSchedule.exerciseList{
                         if ( firestoreScheduleExercise.status == StatesForOngoingActivity.Started.rawValue || firestoreScheduleExercise.status == StatesForOngoingActivity.Idle.rawValue ){
                             currentOnGoingExerciseInSchedule = firestoreScheduleExercise
-                            enableStartPauseButtons()
-                            bindElapsedTimeOnUi()
-                            updateRemainigTimeValues()
+                            isScheduleCompleted = false
                             break
                         }else{
                             continue
                         }
                     }
+                    if isScheduleCompleted {
+                        handleScheduleCompletion()
+                        return
+                    }
+                    
+                }else{
+                    self.dismiss(animated: false)
                 }
-                
             }else{
                 resetCurrentStateOnSchedule()
-                getCurrentOnGoingExercise()
+                startSchuedleFromBegining()
             }
-            
+        }else{
+            self.dismiss(animated: false)
+        }
+        
+    }
+    
+    private func handleScheduleCompletion(){
+        resetCurrentStateOnSchedule()
+        AlertManager.shared.singleActionMessage(title: "Alert",message:  "Schedule is Completed!" , actionButtonTitle: "Ok", vc: self) { action in
+            self.dismiss(animated: true)
         }
     }
     
-    private func updateRemainigTimeValues(){
-        
+    private func startSchuedleFromBegining(){
+        currentOnGoingExerciseInSchedule = currentSchedule?.exerciseList.first
+        currentOnGoingExerciseInSchedule?.status = StatesForOngoingActivity.Started.rawValue
+        currentSchedule?.status = StatesForOngoingActivity.Started.rawValue
     }
     
-    private func bindElapsedTimeOnUi(){
-        bindCurrentElapsedExerciseTimeOnUi()
-        bindCurrentElapsedScheduleTimeOnUi()
+    private func updateRemainigTimeInitially(){
+        secondsRemaining = currentOnGoingExerciseInSchedule!.totalTime - currentOnGoingExerciseInSchedule!.elapsedTime
     }
     
-    private func bindCurrentElapsedExerciseTimeOnUi(){
-        
+    private func updateElapsedTimeOnCurrentExercise(){
+        currentOnGoingExerciseInSchedule!.elapsedTime = currentOnGoingExerciseInSchedule!.totalTime - secondsRemaining
     }
     
-    private func bindCurrentElapsedScheduleTimeOnUi(){
-        
+    private func bindRemainingExerciseTimeOnUi(){
+        let remamingTimeInString =   secondsToHoursMinutesSecondsStr(seconds: secondsRemaining)
+        timeCountLbl.text = remamingTimeInString
     }
     
     private func enableStartPauseButtons(){
@@ -77,7 +105,7 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func resetCurrentStateOnSchedule(){
-        if var _currentExerciseSchedule = currentExerciseSchedule{
+        if var _currentExerciseSchedule = currentSchedule{
             _currentExerciseSchedule.status = StatesForOngoingActivity.Idle.rawValue
             _currentExerciseSchedule.elapsedTime = 0
             if !_currentExerciseSchedule.exerciseList.isEmpty{
@@ -85,22 +113,20 @@ class StartedScheduleVC: UIViewController {
                     scheduleExerciseList.elapsedTime = 0
                     scheduleExerciseList.status = StatesForOngoingActivity.Idle.rawValue
                 }
-                currentExerciseSchedule = _currentExerciseSchedule
-                updateCustomScheduleDataOnFirestore()
+                currentSchedule = _currentExerciseSchedule
+                syncScheduleDataToFirestore()
             }
         }
     }
     
-    private func updateCustomScheduleDataOnFirestore(){
-        if let _currentExerciseSchedule = currentExerciseSchedule {
-            RappleActivityIndicatorView.startAnimating()
+    private func syncScheduleDataToFirestore(){
+        if let _currentExerciseSchedule = currentSchedule {
             FirestoreScheduleManager.shared.updaetCustomScheduleOnFirestoreDb(firestoreSchedule: _currentExerciseSchedule) { status, message, data in
                 if(status){
                     
                 }else{
                     
                 }
-                RappleActivityIndicatorView.stopAnimation()
             }
         }
     }
@@ -112,39 +138,75 @@ class StartedScheduleVC: UIViewController {
     }
     @IBAction func nextAction(_ sender: Any) {
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
-    //    private func handleTimerTick(){
-    //        if self.secondsRemaining > 0 {
-    //            //            self.lblTimeOne.text = "\(self.secondsRemaining) seconds"
-    //            self.secondsRemaining -= 1
-    //        } else {
-    //            self.timer?.invalidate()
-    //        }
-    //    }
-    //
-    //    private func initAndStartTimer(){
-    //        self.timer =  Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
-    //            self.handleTimerTick()
-    //        }
-    //    }
-    //
-    //
-    //    @IBAction func actionPlay(_ sender: Any) {
-    //        initAndStartTimer()
-    //    }
-    //
-    //    @IBAction func actionPause(_ sender: Any) {
-    //        self.timer?.invalidate()
-    //    }
     
+    private func secondsToHoursMinutesSecondsStr (seconds : Int) -> String {
+        let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(seconds: seconds);
+        var str = hours > 0 ? "\(hours) h" : ""
+        str = minutes > 0 ? str + " \(minutes) min" : str
+        str = seconds > 0 ? str + " \(seconds) sec" : str
+        return str
+    }
+    
+    private func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    private func calculateRemainingTime(){
+        if self.secondsRemaining-1 > 0 {
+            self.secondsRemaining -= 1
+        } else {
+            secondsRemaining = 0
+            self.exerciseCountdownTimer?.invalidate()
+            self.scheduleDataSyncingCountdownTimer?.invalidate()
+        }
+    }
+    
+    private func completeCurrentExercise(){
+        currentOnGoingExerciseInSchedule?.elapsedTime = 0
+        currentOnGoingExerciseInSchedule?.status = StatesForOngoingActivity.Completed.rawValue
+        
+        updateScheduleWithCurrentStateOfOnGoingExcercise()
+       
+        syncScheduleDataToFirestore()
+        setUpOnGoingExcerciseDetails()
+    }
+    
+    private func updateScheduleWithCurrentStateOfOnGoingExcercise(){
+        if let itemIndex = currentSchedule!.exerciseList.firstIndex(where: {$0.excerciseId == currentOnGoingExerciseInSchedule!.excerciseId}) {
+            currentSchedule!.exerciseList[itemIndex] = currentOnGoingExerciseInSchedule!
+        }
+    }
+    
+    private func initAndStartTimerForOnGoingExercise(){
+        self.exerciseCountdownTimer =  Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+            self.caculateTimesOnTick()
+            self.bindRemainingExerciseTimeOnUi()
+        }
+    }
+    
+    private func initAndStartTimerForSyncDataWithRemote(){
+        self.scheduleDataSyncingCountdownTimer =  Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (Timer) in
+            self.syncScheduleDataToFirestore()
+        }
+    }
+    
+    private func caculateTimesOnTick(){
+        print("secondsRemaining - \(secondsRemaining)")
+        calculateRemainingTime()
+        
+        if secondsRemaining == 0 {
+            completeCurrentExercise()
+        }else{
+            updateElapsedTimeOnCurrentExercise()
+            updateScheduleWithCurrentStateOfOnGoingExcercise()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.exerciseCountdownTimer?.invalidate()
+        self.scheduleDataSyncingCountdownTimer?.invalidate()
+        super.viewWillDisappear(animated)
+    }
     
 }
