@@ -23,9 +23,11 @@ class StartedScheduleVC: UIViewController {
     
     private func setUpOnGoingExcerciseDetails(){
         getCurrentOnGoingExercise()
-        updateRemainigTimeInitially()
-        initAndStartTimerForOnGoingExercise()
-        initAndStartTimerForSyncDataWithRemote()
+        if currentOnGoingExerciseInSchedule != nil {
+            updateRemainigTimeInitially()
+            initAndStartTimerForOnGoingExercise()
+            initAndStartTimerForSyncDataWithRemote()
+        }
     }
     
     func updateUI() {
@@ -40,6 +42,7 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func getCurrentOnGoingExercise(){
+        currentOnGoingExerciseInSchedule = nil
         if let _currentExerciseSchedule = currentSchedule{
             if(_currentExerciseSchedule.status == StatesForOngoingActivity.Started.rawValue){
                 if  !_currentExerciseSchedule.exerciseList.isEmpty{
@@ -53,7 +56,11 @@ class StartedScheduleVC: UIViewController {
                             continue
                         }
                     }
-                    handleScheduleCompletion(hasScheduleCompleted: isScheduleCompleted)
+                    if isScheduleCompleted {
+                        handleScheduleCompletion()
+                        return
+                    }
+                    
                 }else{
                     self.dismiss(animated: false)
                 }
@@ -67,17 +74,16 @@ class StartedScheduleVC: UIViewController {
         
     }
     
-    private func handleScheduleCompletion(hasScheduleCompleted:Bool){
-        if hasScheduleCompleted {
-            resetCurrentStateOnSchedule()
-            AlertManager.shared.singleActionMessage(title: "Alert",message:  "Schedule is Completed!" , actionButtonTitle: "Ok", vc: self) { action in
-                self.dismiss(animated: true)
-            }
+    private func handleScheduleCompletion(){
+        resetCurrentStateOnSchedule()
+        AlertManager.shared.singleActionMessage(title: "Alert",message:  "Schedule is Completed!" , actionButtonTitle: "Ok", vc: self) { action in
+            self.dismiss(animated: true)
         }
     }
     
     private func startSchuedleFromBegining(){
         currentOnGoingExerciseInSchedule = currentSchedule?.exerciseList.first
+        currentOnGoingExerciseInSchedule?.status = StatesForOngoingActivity.Started.rawValue
         currentSchedule?.status = StatesForOngoingActivity.Started.rawValue
     }
     
@@ -147,15 +153,13 @@ class StartedScheduleVC: UIViewController {
     }
     
     private func calculateRemainingTime(){
-        if self.secondsRemaining > 0 {
+        if self.secondsRemaining-1 > 0 {
             self.secondsRemaining -= 1
         } else {
             secondsRemaining = 0
             self.exerciseCountdownTimer?.invalidate()
             self.scheduleDataSyncingCountdownTimer?.invalidate()
-            completeCurrentExercise()
         }
-        print("secondsRemaining\(secondsRemaining)")
     }
     
     private func completeCurrentExercise(){
@@ -176,7 +180,7 @@ class StartedScheduleVC: UIViewController {
     
     private func initAndStartTimerForOnGoingExercise(){
         self.exerciseCountdownTimer =  Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
-            self.caculateTimesOnTIck()
+            self.caculateTimesOnTick()
             self.bindRemainingExerciseTimeOnUi()
         }
     }
@@ -187,19 +191,22 @@ class StartedScheduleVC: UIViewController {
         }
     }
     
-    private func syncScheduleCurrentStateWithRemote(){
-        
-    }
-    
-    private func caculateTimesOnTIck(){
+    private func caculateTimesOnTick(){
+        print("secondsRemaining - \(secondsRemaining)")
         calculateRemainingTime()
-        updateElapsedTimeOnCurrentExercise()
-        updateScheduleWithCurrentStateOfOnGoingExcercise()
+        
+        if secondsRemaining == 0 {
+            completeCurrentExercise()
+        }else{
+            updateElapsedTimeOnCurrentExercise()
+            updateScheduleWithCurrentStateOfOnGoingExcercise()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.exerciseCountdownTimer?.invalidate()
         self.scheduleDataSyncingCountdownTimer?.invalidate()
+        super.viewWillDisappear(animated)
     }
     
 }
