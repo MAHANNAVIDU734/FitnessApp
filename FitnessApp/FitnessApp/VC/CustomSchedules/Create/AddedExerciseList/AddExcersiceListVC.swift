@@ -22,6 +22,13 @@ class AddExcersiceListVC: UIViewController {
     @IBAction func addExcerciceAction(_ sender: Any) {
         navigateToPickExcerciseView()
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func startScheduleAction(_ sender: Any) {
+    }
 }
 
 extension AddExcersiceListVC: UITableViewDelegate , UITableViewDataSource {
