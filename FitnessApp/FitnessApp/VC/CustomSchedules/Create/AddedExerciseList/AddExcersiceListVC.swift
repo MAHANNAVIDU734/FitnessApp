@@ -1,5 +1,6 @@
 
 import UIKit
+import RappleProgressHUD
 
 class AddExcersiceListVC: UIViewController {
 
@@ -10,9 +11,31 @@ class AddExcersiceListVC: UIViewController {
     
     override func viewDidLoad() {
         selectedScheduleTitleLbl.text = currentSchedule?.scheduleTitle
-        tableView.reloadData()
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchScheduleDetailsFromFirestore()
+        super.viewWillAppear(animated)
+    }
+    
+    private func fetchScheduleDetailsFromFirestore() {
+        RappleActivityIndicatorView.startAnimating()
+        FirestoreScheduleManager.shared.getScheduleDataFromShceduleIdStoredOnFirestoreDb(scheduleId: currentSchedule!.scheduleId) { status, message, data in
+            if (status){
+                print("ScheduleDetails Fetched******")
+                if  let _firestoreSchedule = data as? FirestoreSchedule {
+                    self.currentSchedule = _firestoreSchedule
+                }
+                self.tableView.reloadData()
+                RappleActivityIndicatorView.stopAnimation()
+            }else{
+                RappleActivityIndicatorView.stopAnimation()
+
+            }
+        }
+    }
+    
     
     func navigateToPickExcerciseView(){
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
