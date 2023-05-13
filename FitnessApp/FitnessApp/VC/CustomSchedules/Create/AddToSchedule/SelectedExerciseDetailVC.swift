@@ -37,9 +37,9 @@ class SelectedExerciseDetailVC: UIViewController {
     }
     
     private func updateFirestoreScheduleExercise(){
-        let  firestoreScheduleExercise =   getFirestoreScheduleExerciseObject()
+        updatedFirestoreScheduleObject()
+        
         RappleActivityIndicatorView.startAnimating()
-        selectedFirestoreSchedule?.exerciseList.append(firestoreScheduleExercise!)
         FirestoreScheduleManager.shared.updaetCustomScheduleOnFirestoreDb(firestoreSchedule: selectedFirestoreSchedule!) { status, message, data in
             if (status){
                 print("Schedule Updated******")
@@ -69,6 +69,14 @@ class SelectedExerciseDetailVC: UIViewController {
         
         return firestoreScheduleExercise
         
+    }
+    
+    private func updatedFirestoreScheduleObject(){
+        let  firestoreScheduleExercise =   getFirestoreScheduleExerciseObject()
+        selectedFirestoreSchedule?.exerciseList.append(firestoreScheduleExercise!)
+        
+        let totalScheduleTimeInSeconds =  CommonHelpers.calculateTotalTimeForExerciseInSchedule(firestoreSchedule: selectedFirestoreSchedule!)
+        selectedFirestoreSchedule?.totalTime = totalScheduleTimeInSeconds
     }
     
     private func validateForm() -> Bool {
