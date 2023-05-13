@@ -36,13 +36,14 @@ class ScheduleVC: UIViewController {
     
     func navigateToStartSchedule(firestoreSchedule:FirestoreSchedule){
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "AddExcersiceListVC")
-//        self.navigationController?.pushViewController(vc, animated: true)
-        
         if let _vc = vc as? AddExcersiceListVC {
             _vc.currentSchedule = firestoreSchedule
         }
         
-        UIApplication.topViewController()?.present(vc, animated: true)
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true)
     }
 
 
