@@ -73,6 +73,9 @@ class PickExcerciseVC: UIViewController {
         present(navigationController, animated: true, completion: nil)
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
 
 extension PickExcerciseVC: UITableViewDelegate , UITableViewDataSource {

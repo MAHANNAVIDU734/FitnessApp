@@ -379,12 +379,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-Iy-HC7">
                                 <rect key="frame" x="16" y="43" width="361" height="759"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-QK-Y79">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLp-lX-MNx">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="48"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <color key="textColor" name="title"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iD-hX-FbK">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="tIA-cb-zTT"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backBtn:" destination="9GM-Gx-kd0" eventType="touchUpInside" id="Tjk-r6-V5R"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-QK-Y79">
+                                                <rect key="frame" x="40" y="0.0" width="321" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <color key="textColor" name="title"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-NT-zcO">
                                         <rect key="frame" x="0.0" y="64" width="361" height="695"/>
                                         <color key="backgroundColor" name="theme"/>
@@ -520,8 +537,21 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8nh-JK-H6C">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0j-QB-Lby">
+                                                        <rect key="frame" x="0.0" y="6" width="40" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="UwZ-If-aZe"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="backAction:" destination="qe5-VJ-xzQ" eventType="touchUpInside" id="7Mm-5L-vxJ"/>
+                                                            <action selector="backBtn:" destination="9GM-Gx-kd0" eventType="touchUpInside" id="Myr-cV-nWj"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idk-jR-Qoy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                                        <rect key="frame" x="40" y="0.0" width="313" height="34"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                         <color key="textColor" name="title"/>
                                                         <nil key="highlightedColor"/>
@@ -1008,6 +1038,7 @@ quadriceps (front of upper leg)</string>
         <image name="Background" width="5315" height="5315"/>
         <image name="Profile" width="512" height="512"/>
         <image name="alarm-clock" width="512" height="512"/>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="cell_background" width="2000" height="2000"/>
