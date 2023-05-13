@@ -26,28 +26,12 @@ class ScheduleVC: UIViewController {
     
     func presentEnterScheduleTitlePopupView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "CreateSchedulePopUpVC")
-        if let _vc = vc as? CreateSchedulePopUpVC {
-            _vc.callBack = { status, scheduleTitle in
-                if status {
-                    let firestoreSchedule =  FirestoreSchedule(scheduleId: CommonHelpers.randomString(lenth: 12), scheduleTitle: scheduleTitle!)
-                    self.navigateToSelectExcerciseView(firestoreSchedule:firestoreSchedule )
-                }else{
-                    self.showErrorAlert(messageString: "Schedule Title Required!")
-                    UIApplication.topViewController()?.dismiss(animated: true)
-                }
-                
-            }
-        }
-        UIApplication.topViewController()?.present(vc, animated: true)
+        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .overCurrentContext
+        navigationController.setNavigationBarHidden(true, animated: true)
+        present(navigationController, animated: true)
     }
-    
-    func navigateToSelectExcerciseView(firestoreSchedule:FirestoreSchedule) {
-        let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "PickExcerciseVC")
-        if let _vc = vc as? PickExcerciseVC {
-            _vc.firestoreSchedule = firestoreSchedule
-        }
-        UIApplication.topViewController()?.present(vc, animated: true)
-    }
+
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
         presentEnterScheduleTitlePopupView()
