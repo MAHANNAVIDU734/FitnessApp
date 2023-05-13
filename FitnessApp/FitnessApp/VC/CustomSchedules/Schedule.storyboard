@@ -858,7 +858,7 @@ quadriceps (front of upper leg)</string>
         <!--Started ScheduleVC-->
         <scene sceneID="BGg-pI-nTm">
             <objects>
-                <viewController storyboardIdentifier="StartedScheduleVC" id="9Sk-da-bPM" customClass="StartedScheduleVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartedScheduleVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="9Sk-da-bPM" customClass="StartedScheduleVC" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uO0-5I-bII">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
