@@ -6,10 +6,13 @@ class StartedScheduleVC: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var startbtn: UIButton!
     @IBOutlet weak var timeCountLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var bodyPartLbl: UILabel!
+    @IBOutlet weak var equipmentLbl: UILabel!
+    @IBOutlet weak var gitImageView: UIImageView!
     
     private var isPaused:Bool = true
-    
-
     var currentSchedule:FirestoreSchedule?
     private var currentOnGoingExerciseInSchedule : FirestoreScheduleExercise?
     
@@ -41,6 +44,7 @@ class StartedScheduleVC: UIViewController {
         startbtn.layer.borderWidth = 6
         startbtn.setImage(UIImage(systemName: "arrowtriangle.right.fill"), for: .normal)
         startbtn.setImage(UIImage(systemName: "stop.fill"), for: .selected)
+        
     }
     
     private func getCurrentOnGoingExercise(){
@@ -220,6 +224,11 @@ class StartedScheduleVC: UIViewController {
         self.exerciseCountdownTimer?.invalidate()
         self.scheduleDataSyncingCountdownTimer?.invalidate()
         super.viewWillDisappear(animated)
+    }
+    
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
 }

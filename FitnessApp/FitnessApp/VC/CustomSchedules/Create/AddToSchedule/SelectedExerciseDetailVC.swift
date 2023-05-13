@@ -30,12 +30,6 @@ class SelectedExerciseDetailVC: UIViewController {
         equipmentLbl.text = exerciseEquipments
     }
     
-    @IBAction func addToScheduleAction(_ sender: Any) {
-        if(validateForm()){
-            updateFirestoreScheduleExercise()
-        }
-    }
-    
     private func updateFirestoreScheduleExercise(){
         updatedFirestoreScheduleObject()
         
@@ -123,4 +117,15 @@ class SelectedExerciseDetailVC: UIViewController {
     private func showErrorAlert(messageString:String){
         AlertManager.shared.singleActionMessage(title: "Alert", message: messageString, actionButtonTitle: "Ok", vc: self)
     }
+    
+    @IBAction func addToScheduleAction(_ sender: Any) {
+        if(validateForm()){
+            updateFirestoreScheduleExercise()
+        }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 }
