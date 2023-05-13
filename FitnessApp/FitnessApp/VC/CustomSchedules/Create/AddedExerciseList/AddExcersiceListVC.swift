@@ -4,6 +4,7 @@ import UIKit
 class AddExcersiceListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var selectedScheduleTitleLbl: UILabel!
     
     var currentSchedule:FirestoreSchedule?
     
