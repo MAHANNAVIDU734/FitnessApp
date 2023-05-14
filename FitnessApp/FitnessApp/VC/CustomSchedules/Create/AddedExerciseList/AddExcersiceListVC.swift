@@ -28,6 +28,13 @@ class AddExcersiceListVC: UIViewController {
                 if  let _firestoreSchedule = data as? FirestoreSchedule {
                     self.currentSchedule = _firestoreSchedule
                 }
+                
+                if self.currentSchedule?.exerciseList.isEmpty == true {
+                    self.placeHolderView.isHidden = false
+                }else{
+                    self.placeHolderView.isHidden = false
+                }
+                
                 self.tableView.reloadData()
                 RappleActivityIndicatorView.stopAnimation()
             }else{
