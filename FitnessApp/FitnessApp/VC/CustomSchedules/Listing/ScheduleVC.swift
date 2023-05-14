@@ -26,10 +26,10 @@ class ScheduleVC: UIViewController {
     
     func presentEnterScheduleTitlePopupView() {
         let vc = ApplicationServiceProvider.shared.viewController(in: .Schedule, identifier: "CreateSchedulePopUpVC")
-//        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
-//        navigationController.modalPresentationStyle = .overCurrentContext
-//        navigationController.setNavigationBarHidden(true, animated: true)
-//        present(navigationController, animated: true)
+        //        let navigationController: UINavigationController = UINavigationController(rootViewController: vc)
+        //        navigationController.modalPresentationStyle = .overCurrentContext
+        //        navigationController.setNavigationBarHidden(true, animated: true)
+        //        present(navigationController, animated: true)
         
         UIApplication.topViewController()?.present(vc, animated: true)
     }
@@ -45,8 +45,14 @@ class ScheduleVC: UIViewController {
         navigationController.setNavigationBarHidden(true, animated: true)
         present(navigationController, animated: true)
     }
-
-
+    
+    private func showPlaceHolderView(){
+        placeHolderView.isHidden = false
+    }
+    
+    private func hidePlaceHolderView(){
+        placeHolderView.isHidden = true
+    }
     
     @IBAction func addNewScheduleAction(_ sender: Any) {
         presentEnterScheduleTitlePopupView()
@@ -61,6 +67,11 @@ class ScheduleVC: UIViewController {
                 if  let _firestoreScheduleData = firestoreScheduleData {
                     self.firestoreScheduleList.removeAll()
                     self.firestoreScheduleList.insert(contentsOf: _firestoreScheduleData, at: 0)
+                }
+                if firestoreScheduleData?.isEmpty == true{
+                    self.showPlaceHolderView()
+                }else{
+                    self.hidePlaceHolderView()
                 }
                 self.tableView.reloadData()
                 RappleActivityIndicatorView.stopAnimation()
