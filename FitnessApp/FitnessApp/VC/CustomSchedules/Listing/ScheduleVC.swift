@@ -6,7 +6,7 @@ class ScheduleVC: UIViewController {
     
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var placeHolderView: UIStackView!
     private var  firestoreScheduleList = [FirestoreSchedule]()
     
     override func viewDidLoad() {

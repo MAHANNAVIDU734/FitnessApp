@@ -181,19 +181,40 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KVE-hX-i4k">
+                                <rect key="frame" x="66.666666666666686" y="334.33333333333331" width="260" height="159.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3235813-ai" translatesAutoresizingMaskIntoConstraints="NO" id="27G-mK-CkO">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="KZQ-NX-9vg"/>
+                                            <constraint firstAttribute="width" constant="260" id="ZAo-Qe-UqQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Any Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSQ-58-aFd">
+                                        <rect key="frame" x="63.999999999999986" y="140" width="131.66666666666663" height="19.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n5h-ml-d2q"/>
                         <color key="backgroundColor" name="theme"/>
                         <constraints>
+                            <constraint firstItem="KVE-hX-i4k" firstAttribute="centerX" secondItem="8ha-FS-TrU" secondAttribute="centerX" id="2e4-CK-yXW"/>
                             <constraint firstItem="8ha-FS-TrU" firstAttribute="top" secondItem="n5h-ml-d2q" secondAttribute="top" id="88j-SU-CfG"/>
                             <constraint firstItem="n5h-ml-d2q" firstAttribute="bottom" secondItem="8ha-FS-TrU" secondAttribute="bottom" id="N53-ve-yYy"/>
                             <constraint firstItem="n5h-ml-d2q" firstAttribute="trailing" secondItem="8ha-FS-TrU" secondAttribute="trailing" id="R6L-Yo-gSP"/>
+                            <constraint firstItem="KVE-hX-i4k" firstAttribute="centerY" secondItem="8ha-FS-TrU" secondAttribute="centerY" id="ToP-Lr-on8"/>
                             <constraint firstItem="8ha-FS-TrU" firstAttribute="leading" secondItem="n5h-ml-d2q" secondAttribute="leading" id="e1O-mU-m3h"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Schedule" image="fork.knife.circle.fill" catalog="system" id="23m-h2-viA"/>
                     <connections>
                         <outlet property="buttonView" destination="uUi-1e-TcH" id="f85-yC-ZeK"/>
+                        <outlet property="placeHolderView" destination="KVE-hX-i4k" id="SgE-NI-MWW"/>
                         <outlet property="tableView" destination="h5Q-W9-gSC" id="weO-GW-ogi"/>
                     </connections>
                 </viewController>
@@ -1093,6 +1114,7 @@ quadriceps (front of upper leg)</string>
         </scene>
     </scenes>
     <resources>
+        <image name="3235813-ai" width="750" height="500"/>
         <image name="Background" width="5315" height="5315"/>
         <image name="Profile" width="512" height="512"/>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>

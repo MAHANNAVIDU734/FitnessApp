@@ -6,7 +6,7 @@ class AddExcersiceListVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectedScheduleTitleLbl: UILabel!
-    
+    @IBOutlet weak var placeHolderView: UIStackView!
     var currentSchedule:FirestoreSchedule?
     
     override func viewDidLoad() {
@@ -21,7 +21,8 @@ class AddExcersiceListVC: UIViewController {
     
     private func fetchScheduleDetailsFromFirestore() {
         RappleActivityIndicatorView.startAnimating()
-        FirestoreScheduleManager.shared.getScheduleDataFromShceduleIdStoredOnFirestoreDb(scheduleId: currentSchedule!.scheduleId) { status, message, data in
+        guard let _scheduleId = currentSchedule?.scheduleId else { return }
+        FirestoreScheduleManager.shared.getScheduleDataFromShceduleIdStoredOnFirestoreDb(scheduleId: _scheduleId) { status, message, data in
             if (status){
                 print("ScheduleDetails Fetched******")
                 if  let _firestoreSchedule = data as? FirestoreSchedule {
@@ -77,13 +78,14 @@ class AddExcersiceListVC: UIViewController {
 extension AddExcersiceListVC: UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentSchedule!.exerciseList.count
+        return currentSchedule?.exerciseList.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddExersiceListTVCell" , for: indexPath)
         if let _cell = cell as? AddExersiceListTVCell {
-            _cell.configCell(scheduleExercise: currentSchedule!.exerciseList[indexPath.row])
-
+            if let _model = currentSchedule?.exerciseList {
+                _cell.configCell(scheduleExercise: _model[indexPath.row])
+            }
         }
         return cell
     }
