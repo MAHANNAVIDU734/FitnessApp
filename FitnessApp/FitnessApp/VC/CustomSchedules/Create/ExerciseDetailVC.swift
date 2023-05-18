@@ -28,4 +28,9 @@ class ExerciseDetailVC: UIViewController {
     private func closeVc(){
         dismiss(animated: true)
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
 }
